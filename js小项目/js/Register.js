@@ -39,8 +39,6 @@
 			},function(error,responseText){
 				var json = JSON.parse(responseText);
 				console.log(json);
-				localStorage.token = json.data.token;
-				localStorage.username = json.data.username;
 				oCheck.innerText = json.message;
 				if (json.code === 0) {
 					hidden(oErrorMessage);
