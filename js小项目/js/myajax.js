@@ -68,5 +68,6 @@
       arr.push(k + '=' + encodeURIComponent(json[k]));
     }
     return arr.join('&');
+
   }
 })();

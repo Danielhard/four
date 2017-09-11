@@ -101,6 +101,10 @@
 .ProListImg{
   position: relative;
 }
+.ProListImg img{
+  width: 285px;
+  height: 285px;
+}
 .mark{
   position: absolute;
   width: 100%;
