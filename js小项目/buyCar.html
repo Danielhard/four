@@ -16,8 +16,8 @@
       <li class="gb-tel"><i></i>贵宾专线：4008-6767-38</li>
     </ul>
     <ul class="SMHRight fr">
-      <li class="login"><i></i><a href="login.html">登录</a></li><li class="line">|</li>
-      <li class="register"><i></i><a href="register.html">注册</a></li><li class="line">|</li>
+      <li class="login" data-name="login"><i></i><a href="login.html">登录</a></li><li class="register username" data-name="username"><i></i><a href="login.html">123456</a></li><li class="line">|</li>
+      <li class="register" data-name="register"><i></i><a href="register.html">注册</a></li><li class="login logout" data-name="logout"><i></i><a href="javascript:localStorage.clear(); location.reload();">退出</a></li><li class="line">|</li>
       <li class="myFive">
         <a href="#">我的第五大道</a><i></i>
         <ol class="myFiveList">
@@ -67,45 +67,9 @@
           <li class="operation">操作</li>
         </ul>
       </div>
-      <div class="bcProListItem">
-        <div class="bcProListItemPic fl">
-          <img src="image/detailPic.jpg" alt="">
-        </div>
-        <div class="bcProListItemName fl"><a href="#">【99欢聚价】倍思指尖手机陀螺指环支架扣粘贴式环扣苹果华为通用桌面创意个性</a></div>
-        <div class="colorAndStyle fl">
-          颜色分类：B款天鹅项链（银色）
-        </div>
-        <div class="unitPrice fl">&yen;<span class="unitPriceSpan">690.00</span></div>
-        <div class="count fl">
-          <span>
-            <i class="countLeft isCount">-</i><input class="countCon" value="1"/><i class="countRight isCount">+</i>
-          </span>
-        </div>
-        <div class="singleSum fl gold">&yen;<span class="singleSumSpan">690.00</span></div>
-        <div class="operation fl">
-          <a class="operationDel" href="javascript:(0)">删除</a>
-        </div>
-      </div>
-      <div class="bcProListItem">
-        <div class="bcProListItemPic fl">
-          <img src="image/detailPic.jpg" alt="">
-        </div>
-        <div class="bcProListItemName fl"><a href="#">【99欢聚价】倍思指尖手机陀螺指环支架扣粘贴式环扣苹果华为通用桌面创意个性</a></div>
-        <div class="colorAndStyle fl">
-          颜色分类：B款天鹅项链（银色）
-        </div>
-        <div class="unitPrice fl">&yen;<span class="unitPriceSpan">690.00</span></div>
-        <div class="count fl">
-          <span>
-            <i class="countLeft isCount">-</i><input class="countCon" value="1"/><i class="countRight isCount">+</i>
-          </span>
-        </div>
-        <div class="singleSum fl gold">&yen;<span class="singleSumSpan">690.00</span></div>
-        <div class="operation fl">
-          <a class="operationDel" href="javascript:(0)">删除</a>
-        </div>
-      </div>
+
     </div>
+
     <div class="totalAmount">
       <div class="totalAmountLeft fl">
         <ul>
@@ -123,6 +87,9 @@
   </div>
 </div>
 <script type="text/javascript" src="js/base.js"></script>
+<script type="text/javascript" src="js/myajax.js"></script>
+<script type="text/javascript" src="js/index-login.js"></script>
+<script type="text/javascript" src="js/buyCar-Ajax.js"></script>
 <script type="text/javascript" src="js/buyCar.js"></script>
 </body>
 </html>

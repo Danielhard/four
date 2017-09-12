@@ -4,11 +4,14 @@
 	this.selector = selector;
 	this.init();
 	this.bindEvent();
+
 	// this.bindScrollEvent();
+
 }
 BackToTop.prototype.init = function() {
 	this.dom = document.querySelector(this.selector);
 }
+
 // BackToTop.prototype.bindScrollEvent = function() {
 //     var self = this;
 // 	window.onscroll = function(){
@@ -21,6 +24,10 @@ BackToTop.prototype.init = function() {
 //         }
 //     }
 // }
+
+
+
+
 BackToTop.prototype.bindEvent = function() {
 	 this.dom.onclick = function() {
 	  scrollAnimate(0, 1000);
