@@ -46,6 +46,11 @@
   background: url("../image/youli.gif") top center no-repeat;
   margin-right: 8px;
 }
+.myFive{
+  position: relative;
+  border-left: 1px solid #f2f2f2;
+  border-right: 1px solid #f2f2f2;
+}
 .myFive>i{
   display: inline-block;
   width: 20px;
@@ -56,10 +61,28 @@
 }
 .myFive:hover{
   background-color: white;
+  border-color: #ccc;
+}
+.myFive:hover>ol{
+  display: block;
 }
 .myFive:hover >i {
   background: url("../image/sprite.png") -350px -470px no-repeat;
 }
+.myFiveList{
+  position: absolute;
+  width: 100%;
+  left: -1px;
+  border: 1px solid #ccc;
+  background: #FFF;
+  border-top: none;
+  display: none;
+}
+.myFiveList>li{
+  width: 100%;
+  text-align: center;
+}
+
 /*header部分样式结束*/
 
 /*logoAndSearch部分样式*/
