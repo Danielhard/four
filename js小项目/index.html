@@ -13,6 +13,9 @@
     body{
       height: 9000px;
     }
+    .username,.logout{
+			display: none;
+		}
   </style>
 </head>
 <body>
@@ -24,8 +27,8 @@
         <li class="gb-tel"><i></i>贵宾专线：4008-6767-38</li>
       </ul>
       <ul class="SMHRight fr">
-        <li class="login"><i></i><a href="login.html">登录</a></li><li class="line">|</li>
-        <li class="register"><i></i><a href="register.html">注册</a></li><li class="line">|</li>
+        <li class="login" data-name="login"><i></i><a href="login.html">登录</a></li><li class="register username" data-name="username"><i></i><a href="login.html">123456</a></li><li class="line">|</li>
+        <li class="register" data-name="register"><i></i><a href="register.html">注册</a></li><li class="login logout" data-name="logout"><i></i><a href="javascript:localStorage.clear(); location.reload();">退出</a></li><li class="line">|</li>
         <li class="myFive"><a href="#">我的第五大道</a><i></i></li><li class="line">|</li>
         <li class="help"><a href="#">帮助中心</a></li><li class="line">|</li>
         <li class="phoneVersion"><a href="#">手机版下载</a><i></i></li>
@@ -284,117 +287,119 @@
     <div class="w">
       <!--homeFurnishing:家居,furniture:家具,Stationery:文具,Digital:数码,Fun：玩乐-->
       <div class="homeFurnishing mainProItem">
-        <div class="proTitle">
-          <div class="proTitleLeft fl">
+          <div class="proTitle">
+           <div class="proTitleLeft fl">
             <span class="proTypeIcon"></span>
             亿米数码数码精品专场
-          </div>
-          <div class="proTitleRight fr">
+           </div>
+           <div class="proTitleRight fr">
             <a href="#">查看更多>></image></a>
+           </div>
           </div>
-        </div>
         <div class="proContain">
           <ul class="mainProList clearfix">
-            <li class="mainProListItem">
-              <a href="#">
-                <div class="ProListImg">
-                  <img src="image/pic1.jpg"/>
-                  <div class="mark"></div>
-                </div>
-                <div class="ProListInfor">
-                  <h3 class="ProName" title="仅重600g便携蓝牙音箱 丹麦设计 专业级音质 防滑防水 长续航">仅重600g便携蓝牙音箱 丹麦设计 专业级音质 防滑防水 长续航</h3>
-                  <p class="des">真正的便捷式蓝牙扬声器，既可畅想音乐又可接听来电，重量只有600g</p>
-                  <span class="price"><i>&yen;</i>1898.00</span>
-                </div>
-              </a>
-            </li>
-            <li class="mainProListItem">
-              <a href="#">
-                <div class="ProListImg">
-                  <img src="image/pic1.jpg"/>
-                </div>
-                <div class="ProListInfor">
-                  <h3 class="ProName" title="仅重600g便携蓝牙音箱 丹麦设计 专业级音质 防滑防水 长续航">仅重600g便携蓝牙音箱 丹麦设计 专业级音质 防滑防水 长续航</h3>
-                  <p class="des">真正的便捷式蓝牙扬声器，既可畅想音乐又可接听来电，重量只有600g</p>
-                  <span class="price"><i>&yen;</i>1898.00</span>
-                </div>
-              </a>
-            </li>
-            <li class="mainProListItem">
-              <a href="#">
-                <div class="ProListImg">
-                  <img src="image/pic1.jpg"/>
-                </div>
-                <div class="ProListInfor">
-                  <h3 class="ProName" title="仅重600g便携蓝牙音箱 丹麦设计 专业级音质 防滑防水 长续航">仅重600g便携蓝牙音箱 丹麦设计 专业级音质 防滑防水 长续航</h3>
-                  <p class="des">真正的便捷式蓝牙扬声器，既可畅想音乐又可接听来电，重量只有600g</p>
-                  <span class="price"><i>&yen;</i>1898.00</span>
-                </div>
-              </a>
-            </li>
-            <li class="mainProListItem">
-              <a href="#">
-                <div class="ProListImg">
-                  <img src="image/pic1.jpg"/>
-                </div>
-                <div class="ProListInfor">
-                  <h3 class="ProName" title="仅重600g便携蓝牙音箱 丹麦设计 专业级音质 防滑防水 长续航">仅重600g便携蓝牙音箱 丹麦设计 专业级音质 防滑防水 长续航</h3>
-                  <p class="des">真正的便捷式蓝牙扬声器，既可畅想音乐又可接听来电，重量只有600g</p>
-                  <span class="price"><i>&yen;</i>1898.00</span>
-                </div>
-              </a>
-            </li>
-            <li class="mainProListItem">
-              <a href="#">
-                <div class="ProListImg">
-                  <img src="image/pic1.jpg"/>
-                </div>
-                <div class="ProListInfor">
-                  <h3 class="ProName" title="仅重600g便携蓝牙音箱 丹麦设计 专业级音质 防滑防水 长续航">仅重600g便携蓝牙音箱 丹麦设计 专业级音质 防滑防水 长续航</h3>
-                  <p class="des">真正的便捷式蓝牙扬声器，既可畅想音乐又可接听来电，重量只有600g</p>
-                  <span class="price"><i>&yen;</i>1898.00</span>
-                </div>
-              </a>
-            </li>
-            <li class="mainProListItem">
-              <a href="#">
-                <div class="ProListImg">
-                  <img src="image/pic1.jpg"/>
-                </div>
-                <div class="ProListInfor">
-                  <h3 class="ProName" title="仅重600g便携蓝牙音箱 丹麦设计 专业级音质 防滑防水 长续航">仅重600g便携蓝牙音箱 丹麦设计 专业级音质 防滑防水 长续航</h3>
-                  <p class="des">真正的便捷式蓝牙扬声器，既可畅想音乐又可接听来电，重量只有600g</p>
-                  <span class="price"><i>&yen;</i>1898.00</span>
-                </div>
-              </a>
-            </li>
-            <li class="mainProListItem">
-              <a href="#">
-                <div class="ProListImg">
-                  <img src="image/pic1.jpg"/>
-                </div>
-                <div class="ProListInfor">
-                  <h3 class="ProName" title="仅重600g便携蓝牙音箱 丹麦设计 专业级音质 防滑防水 长续航">仅重600g便携蓝牙音箱 丹麦设计 专业级音质 防滑防水 长续航</h3>
-                  <p class="des">真正的便捷式蓝牙扬声器，既可畅想音乐又可接听来电，重量只有600g</p>
-                  <span class="price"><i>&yen;</i>1898.00</span>
-                </div>
-              </a>
-            </li>
-            <li class="mainProListItem">
-              <a href="#">
-                <div class="ProListImg">
-                  <img src="image/pic1.jpg"/>
-                </div>
-                <div class="ProListInfor">
-                  <h3 class="ProName" title="仅重600g便携蓝牙音箱 丹麦设计 专业级音质 防滑防水 长续航">仅重600g便携蓝牙音箱 丹麦设计 专业级音质 防滑防水 长续航</h3>
-                  <p class="des">真正的便捷式蓝牙扬声器，既可畅想音乐又可接听来电，重量只有600g</p>
-                  <span class="price"><i>&yen;</i>1898.00</span>
-                </div>
-              </a>
-            </li>
+            <!--<li class="mainProListItem">-->
+              <!--<a href="#">-->
+                <!--<div class="ProListImg">-->
+                  <!--<img src="image/pic1.jpg"/>-->
+                  <!--<div class="mark"></div>-->
+                 <!--</div>-->
+                 <!--<div class="ProListInfor">-->
+                  <!--<h3 class="ProName" title="仅重600g便携蓝牙音箱 丹麦设计 专业级音质 防滑防水 长续航">仅重600g便携蓝牙音箱 丹麦设计 专业级音质 防滑防水 长续航</h3>-->
+                  <!--<p class="des">真正的便捷式蓝牙扬声器，既可畅想音乐又可接听来电，重量只有600g</p>-->
+                  <!--<span class="price"><i>&yen;</i>1898.00</span>-->
+                <!--</div>-->
+               <!--</a>-->
+             <!--</li>-->
+            <!--<li class="mainProListItem">-->
+              <!--<a href="#">-->
+                <!--<div class="ProListImg">-->
+                  <!--<img src="image/pic1.jpg"/>-->
+                <!--</div>-->
+                <!--<div class="ProListInfor">-->
+                  <!--<h3 class="ProName" title="仅重600g便携蓝牙音箱 丹麦设计 专业级音质 防滑防水 长续航">仅重600g便携蓝牙音箱 丹麦设计 专业级音质 防滑防水 长续航</h3>-->
+                  <!--<p class="des">真正的便捷式蓝牙扬声器，既可畅想音乐又可接听来电，重量只有600g</p>-->
+                  <!--<span class="price"><i>&yen;</i>1898.00</span>-->
+                <!--</div>-->
+              <!--</a>-->
+            <!--</li>-->
+            <!--<li class="mainProListItem">-->
+              <!--<a href="#">-->
+                <!--<div class="ProListImg">-->
+                  <!--<img src="image/pic1.jpg"/>-->
+                <!--</div>-->
+                <!--<div class="ProListInfor">-->
+                  <!--<h3 class="ProName" title="仅重600g便携蓝牙音箱 丹麦设计 专业级音质 防滑防水 长续航">仅重600g便携蓝牙音箱 丹麦设计 专业级音质 防滑防水 长续航</h3>-->
+                  <!--<p class="des">真正的便捷式蓝牙扬声器，既可畅想音乐又可接听来电，重量只有600g</p>-->
+                  <!--<span class="price"><i>&yen;</i>1898.00</span>-->
+                <!--</div>-->
+              <!--</a>-->
+            <!--</li>-->
+            <!--<li class="mainProListItem">-->
+              <!--<a href="#">-->
+                <!--<div class="ProListImg">-->
+                  <!--<img src="image/pic1.jpg"/>-->
+                <!--</div>-->
+                <!--<div class="ProListInfor">-->
+                  <!--<h3 class="ProName" title="仅重600g便携蓝牙音箱 丹麦设计 专业级音质 防滑防水 长续航">仅重600g便携蓝牙音箱 丹麦设计 专业级音质 防滑防水 长续航</h3>-->
+                  <!--<p class="des">真正的便捷式蓝牙扬声器，既可畅想音乐又可接听来电，重量只有600g</p>-->
+                  <!--<span class="price"><i>&yen;</i>1898.00</span>-->
+                <!--</div>-->
+              <!--</a>-->
+            <!--</li>-->
+            <!--<li class="mainProListItem">-->
+              <!--<a href="#">-->
+                <!--<div class="ProListImg">-->
+                  <!--<img src="image/pic1.jpg"/>-->
+                <!--</div>-->
+                <!--<div class="ProListInfor">-->
+                  <!--<h3 class="ProName" title="仅重600g便携蓝牙音箱 丹麦设计 专业级音质 防滑防水 长续航">仅重600g便携蓝牙音箱 丹麦设计 专业级音质 防滑防水 长续航</h3>-->
+                  <!--<p class="des">真正的便捷式蓝牙扬声器，既可畅想音乐又可接听来电，重量只有600g</p>-->
+                  <!--<span class="price"><i>&yen;</i>1898.00</span>-->
+                <!--</div>-->
+              <!--</a>-->
+            <!--</li>-->
+            <!--<li class="mainProListItem">-->
+              <!--<a href="#">-->
+                <!--<div class="ProListImg">-->
+                  <!--<img src="image/pic1.jpg"/>-->
+                <!--</div>-->
+                <!--<div class="ProListInfor">-->
+                  <!--<h3 class="ProName" title="仅重600g便携蓝牙音箱 丹麦设计 专业级音质 防滑防水 长续航">仅重600g便携蓝牙音箱 丹麦设计 专业级音质 防滑防水 长续航</h3>-->
+                  <!--<p class="des">真正的便捷式蓝牙扬声器，既可畅想音乐又可接听来电，重量只有600g</p>-->
+                  <!--<span class="price"><i>&yen;</i>1898.00</span>-->
+                <!--</div>-->
+              <!--</a>-->
+            <!--</li>-->
+            <!--<li class="mainProListItem">-->
+              <!--<a href="#">-->
+                <!--<div class="ProListImg">-->
+                  <!--<img src="image/pic1.jpg"/>-->
+                <!--</div>-->
+                <!--<div class="ProListInfor">-->
+                  <!--<h3 class="ProName" title="仅重600g便携蓝牙音箱 丹麦设计 专业级音质 防滑防水 长续航">仅重600g便携蓝牙音箱 丹麦设计 专业级音质 防滑防水 长续航</h3>-->
+                  <!--<p class="des">真正的便捷式蓝牙扬声器，既可畅想音乐又可接听来电，重量只有600g</p>-->
+                  <!--<span class="price"><i>&yen;</i>1898.00</span>-->
+                <!--</div>-->
+              <!--</a>-->
+            <!--</li>-->
+            <!--<li class="mainProListItem">-->
+              <!--<a href="#">-->
+                <!--<div class="ProListImg">-->
+                  <!--<img src="image/pic1.jpg"/>-->
+                <!--</div>-->
+                <!--<div class="ProListInfor">-->
+                  <!--<h3 class="ProName" title="仅重600g便携蓝牙音箱 丹麦设计 专业级音质 防滑防水 长续航">仅重600g便携蓝牙音箱 丹麦设计 专业级音质 防滑防水 长续航</h3>-->
+                  <!--<p class="des">真正的便捷式蓝牙扬声器，既可畅想音乐又可接听来电，重量只有600g</p>-->
+                  <!--<span class="price"><i>&yen;</i>1898.00</span>-->
+                <!--</div>-->
+              <!--</a>-->
+            <!--</li>-->
           </ul>
         </div>
       </div>
+
+
 
       <div class="furniture mainProItem">
 
@@ -521,7 +526,9 @@
   <script type="text/javascript" src="js/banner.js"></script>
   <script type="text/javascript"src="js/selectedCard.js"></script>
   <script type="text/javascript" src="js/index.js"></script>
-  <script type="text/javascript"src="js/myajax.js"></script>
+  <script type="text/javascript" src="js/myajax.js"></script>
+  <script type="text/javascript"src="js/mainShow.js">
   <script type="text/javascript" src="js/cart-ajax.js"></script>
+  <script type="text/javascript" src="js/index-login.js"></script>
 </body>
 </html>

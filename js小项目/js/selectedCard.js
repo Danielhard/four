@@ -5,12 +5,19 @@
     var time=500;
     for(var i=0;i<oLi.length;i++){
         oLi[i].index=i;
-        oLi[i].onmouseenter=function () {
+        var lock=true;
+        oLi[i].onmouseover=function () {
+            if(!lock)return;
+            lock=false;
             for (var j = 0; j < oLi.length; j++) {
                 oLi[j].className = "";
             }
             this.className = " select_current";
-            animate(oMainscroll,{left:-width*this.index},time,"Linear");
+            animate(oMainscroll,{left:-width*this.index},time,"Linear",function () {
+                this.timer=setTimeout(function () {
+                    lock=true;
+                },50);
+            });
         }
       }
 })();
