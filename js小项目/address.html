@@ -19,8 +19,12 @@
       <li class="gb-tel"><i></i>贵宾专线：4008-6767-38</li>
     </ul>
     <ul class="SMHRight fr">
-      <li class="login"><i></i><a href="login.html">登录</a></li><li class="line">|</li>
-      <li class="register"><i></i><a href="register.html">注册</a></li><li class="line">|</li>
+      <li class="login" data-name="login"><i></i><a href="login.html">登录</a></li>
+      <li class="register username" data-name="username"><i></i><a href="login.html">123456</a></li>
+      <li class="line">|</li>
+      <li class="register" data-name="register"><i></i><a href="register.html">注册</a></li>
+      <li class="login logout" data-name="logout"><i></i><a href="javascript:localStorage.clear(); location.reload();">退出</a></li>
+      <li class="line">|</li>
       <li class="myFive">
         <a href="#">我的第五大道</a><i></i>
         <ol class="myFiveList">
@@ -52,84 +56,19 @@
       <span>选择收货地址</span>
     </div>
     <ul id="addressList" class="addressList clearfix">
-      <li>
-        <div  class="addressListTitle">
-          <span class="province">山东</span><span class="city">青岛</span>
-          <span class="name">(<i>叶家辉</i> 收)</span>
-          <i class="delAddress fr">删除</i>
-        </div>
-        <div class="detailAddressInfor">
-          <span class="district">区域</span>
-          <span class="addressDetail">详细地址详细地址详细地址详细地址详细地址详细地址详细地址详细地址
-            <i class="addressDTel">17854239497</i>
-          </span>
-        </div>
-      </li>
-      <li>
-        <div  class="addressListTitle">
-          <span class="province">山东</span><span class="city">青岛</span>
-          <span class="name">(<i>叶家辉</i> 收)</span>
-          <i class="delAddress fr">删除</i>
-        </div>
-        <div class="detailAddressInfor">
-          <span class="district">区域</span>
-          <span class="addressDetail">详细地址详细地址详细地址详细地址详细地址详细地址详细地址详细地址
-            <i class="addressDTel">17854239497</i>
-          </span>
-        </div>
-      </li>
-      <li>
-        <div  class="addressListTitle">
-          <span class="province">山东</span><span class="city">青岛</span>
-          <span class="name">(<i>叶家辉</i> 收)</span>
-          <i class="delAddress fr">删除</i>
-        </div>
-        <div class="detailAddressInfor">
-          <span class="district">区域</span>
-          <span class="addressDetail">详细地址详细地址详细地址详细地址详细地址详细地址详细地址详细地址
-            <i class="addressDTel">17854239497</i>
-          </span>
-        </div>
-      </li>
-      <li>
-        <div  class="addressListTitle">
-          <span class="province">山东</span><span class="city">青岛</span>
-          <span class="name">(<i>叶家辉</i> 收)</span>
-          <i class="delAddress fr">删除</i>
-        </div>
-        <div class="detailAddressInfor">
-          <span class="district">区域</span>
-          <span class="addressDetail">详细地址详细地址详细地址详细地址详细地址详细地址详细地址详细地址
-            <i class="addressDTel">17854239497</i>
-          </span>
-        </div>
-      </li>
-      <li>
-        <div  class="addressListTitle">
-          <span class="province">山东</span><span class="city">青岛</span>
-          <span class="name">(<i>叶家辉</i> 收)</span>
-          <i class="delAddress fr">删除</i>
-        </div>
-        <div class="detailAddressInfor">
-          <span class="district">区域</span>
-          <span class="addressDetail">详细地址详细地址详细地址详细地址详细地址详细地址详细地址详细地址
-            <i class="addressDTel">17854239497</i>
-          </span>
-        </div>
-      </li>
-      <li>
-        <div  class="addressListTitle">
-          <span class="province">山东</span><span class="city">青岛</span>
-          <span class="name">(<i>叶家辉</i> 收)</span>
-          <i class="delAddress fr">删除</i>
-        </div>
-        <div class="detailAddressInfor">
-          <span class="district">区域</span>
-          <span class="addressDetail">详细地址详细地址详细地址详细地址详细地址详细地址详细地址详细地址
-            <i class="addressDTel">17854239497</i>
-          </span>
-        </div>
-      </li>
+      <!--<li>-->
+        <!--<div  class="addressListTitle">-->
+          <!--<span class="province">山东</span><span class="city">青岛</span>-->
+          <!--<span class="name">(<i>叶家辉</i> 收)</span>-->
+          <!--<i class="delAddress fr">删除</i>-->
+        <!--</div>-->
+        <!--<div class="detailAddressInfor">-->
+          <!--<span class="district">区域</span>-->
+          <!--<span class="addressDetail">详细地址详细地址详细地址详细地址详细地址详细地址详细地址详细地址-->
+            <!--<i class="addressDTel">17854239497</i>-->
+          <!--</span>-->
+        <!--</div>-->
+      <!--</li>-->
     </ul>
     <div class="newAddress-showAllAddress">
       <button id="newAddress" class="newAddress fl">使用新地址</button>
@@ -137,7 +76,7 @@
     </div>
     <div class="subOrder">
       <a href="javascript:(0)">返回购物车</a>
-      <button>提交订单</button>
+      <button id="subOrderBtn">提交订单</button>
     </div>
   </div>
 </div>
@@ -244,77 +183,84 @@
       <span id="modelBoxClose" class="closeAddAddress fr">X</span>
     </div>
     <div class="addAddressCon">
-      <div>
-        <label for="addUsername"><i>收货人姓名</i><input id="addUsername" name="username" type="text"></label>
-      </div>
-      <div class="cpcd">
-        <label for="country">国家
-          <select name="country" id="country">
-            <option value="中国大陆">中国大陆</option>
-            <option value="港澳">港澳</option>
-            <option value="台湾">台湾</option>
-            <option value="马来西亚">马来西亚</option>
-            <option value="海外其他">海外其他</option>
-          </select>
-        </label>
-        <label for="province">省份
-        <select name="province" id="province">
-          <option value="中国大陆">中国大陆</option>
-          <option value="港澳">港澳</option>
-          <option value="台湾">台湾</option>
-          <option value="马来西亚">马来西亚</option>
-          <option value="海外其他">海外其他</option>
-        </select>
-      </label>
-        <label for="city">城市
-          <select name="city" id="city">
-            <option value="中国大陆">中国大陆</option>
-            <option value="港澳">港澳</option>
-            <option value="台湾">台湾</option>
-            <option value="马来西亚">马来西亚</option>
-            <option value="海外其他">海外其他</option>
-          </select>
-        </label>
-        <label for="district">区域
-          <select name="district" id="district">
-            <option value="中国大陆">中国大陆</option>
-            <option value="港澳">港澳</option>
-            <option value="台湾">台湾</option>
-            <option value="马来西亚">马来西亚</option>
-            <option value="海外其他">海外其他</option>
-          </select>
-        </label>
-      </div>
-      <div class="addressDiv">
-        <label for="address"><i>收货地址</i>
-          <textarea name="address" id="address"></textarea>
-        </label>
-      </div>
-      <div>
-        <label for="sign_building"><i>标志性建筑</i><input id="sign_building" name="sign_building" type="text"></label>
-      </div>
-      <div>
-        <label for="zipcode"><i>邮编</i><input id="zipcode" name="zipcode" type="text"></label>
-      </div>
-      <div>
-        <label for="tel"><i>电话号码</i><input id="tel" name="tel" type="text"></label>
-      </div>
-      <div>
-        <label for="mobile"><i>手机号</i><input id="mobile" name="mobile" type="text"></label>
-      </div>
-      <div>
-        <label for="email"><i>邮箱</i><input id="email" name="email" type="text"></label>
-      </div>
-      <div>
-        <label for="best_time"><i>最佳送货时间</i><input id="best_time" name="best_time" type="text"></label>
-      </div>
-      <input id="subAddress" class="submit" type="submit" value="保存">
+      <form id="addAddressConForm">
+        <div>
+          <label for="addUsername"><i>收货人姓名</i><input id="addUsername" name="username" type="text"></label>
+        </div>
+        <div class="cpcd">
+          <label for="country">国家
+            <select name="country" id="country">
+              <option value="中国大陆">中国大陆</option>
+              <option value="港澳">港澳</option>
+              <option value="台湾">台湾</option>
+              <option value="马来西亚">马来西亚</option>
+              <option value="海外其他">海外其他</option>
+            </select>
+          </label>
+          <label for="province">省份
+            <select name="province" id="province">
+              <option value="中国大陆">中国大陆</option>
+              <option value="港澳">港澳</option>
+              <option value="台湾">台湾</option>
+              <option value="马来西亚">马来西亚</option>
+              <option value="海外其他">海外其他</option>
+            </select>
+          </label>
+          <label for="city">城市
+            <select name="city" id="city">
+              <option value="中国大陆">中国大陆</option>
+              <option value="港澳">港澳</option>
+              <option value="台湾">台湾</option>
+              <option value="马来西亚">马来西亚</option>
+              <option value="海外其他">海外其他</option>
+            </select>
+          </label>
+          <label for="district">区域
+            <select name="district" id="district">
+              <option value="中国大陆">中国大陆</option>
+              <option value="港澳">港澳</option>
+              <option value="台湾">台湾</option>
+              <option value="马来西亚">马来西亚</option>
+              <option value="海外其他">海外其他</option>
+            </select>
+          </label>
+        </div>
+        <div class="addressDiv">
+          <label for="address"><i>收货地址</i>
+            <textarea name="address" id="address"></textarea>
+          </label>
+        </div>
+        <div class="address_name"><label for="address_name"><i>地址位置</i>
+          <input id="address_name" name="address_name" type="text">
+        </label></div>
+        <div>
+          <label for="sign_building"><i>标志性建筑</i><input id="sign_building" name="sign_building" type="text"></label>
+        </div>
+        <div>
+          <label for="zipcode"><i>邮编</i><input id="zipcode" name="zipcode" type="text"></label>
+        </div>
+        <div>
+          <label for="tel"><i>电话号码</i><input id="tel" name="tel" type="text"></label>
+        </div>
+        <div>
+          <label for="mobile"><i>手机号</i><input id="mobile" name="mobile" type="text"></label>
+        </div>
+        <div>
+          <label for="email"><i>邮箱</i><input id="email" name="email" type="text"></label>
+        </div>
+        <div>
+          <label for="best_time"><i>最佳送货时间</i><input id="best_time" name="best_time" type="text"></label>
+        </div>
+        <input id="subAddress" class="submit" type="submit" value="保存">
+      </form>
     </div>
   </div>
 </div>
 
 <script type="text/javascript" src="js/base.js"></script>
 <script type="text/javascript" src="js/animateFrame03版.js"></script>
+<script type="text/javascript" src="js/myajax.js"></script>
+<script type="text/javascript" src="js/index-login.js"></script>
 <script type="text/javascript" src="js/address.js"></script>
 <script type="text/javascript" src="js/modelBox.js"></script>
 </body>

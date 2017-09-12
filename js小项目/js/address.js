@@ -5,14 +5,16 @@
   var newAddress = document.querySelector('#newAddress');
   var modelBox = document.querySelector("#modelBox");
   var subAddress = document.querySelector("#subAddress");
+  var subOrderBtn = document.querySelector("#subOrderBtn");
+  var allAddress;
   addressList.addEventListener('click',function(event) {
     event = event || window.event;
-    var target = event.target || target.srcElement;
+    var target = event.target || event.srcElement;
 
     if(!target.classList.contains('delAddress')){
+
       // 找到当前点击的框的最外面的LI,无论是删除还是选中都要找到这个li
       while(target.nodeName !== "LI"){
-        console.log(target.nodeName);
         target = target.parentNode;
       }
       var allLi = target.parentNode.querySelectorAll('li');
@@ -24,11 +26,23 @@
     }else{
       // 找到当前点击的框的最外面的LI,无论是删除还是选中都要找到这个li
       while(target.nodeName !== "LI"){
-        console.log(target.nodeName);
         target = target.parentNode;
       }
-      // 点击删除发起Ajax请求
-      delAddress(target);
+
+      // 点击删除发起Ajax请求,删除收货地址
+
+      myajax.get('http://h6.duchengjiu.top/shop/api_useraddress.php',
+          {
+            status:'delete',
+            address_id : target.dataset.id,
+            token :localStorage.token
+          },function(error,jsonData){
+            var json = JSON.parse(jsonData);
+            if(json.code === 0){
+              delAddress(target);
+            }
+          })
+
     }
   },false);
 
@@ -36,9 +50,8 @@
   var showAllAddress = document.querySelector("#showAllAddress");
   showAllAddress.addEventListener('click',function() {
 
-    // 这里后台会返回一个数据,里面包含所有的地址信息,这里我先写有6个地址
-    var addressLen = 6;
-    var addressCount = Math.ceil(addressLen / 4 );
+    var addressLen = addressList.querySelectorAll('li').length;
+    var addressCount = Math.ceil(addressLen / 4 );          //控制每4个为一排
     if(this.innerText === "显示所有地址"){
       animate(addressList,{height:oLiHeight * addressCount},300,'Quad.easeOut',function(){
         flag = !flag;
@@ -56,38 +69,12 @@
     showModelBox();
   },false);
 
-
-  subAddress.addEventListener('click',function() {
-    addNewAddress();
-    console.log(1);
+  // 点击提交后模态框隐藏,注意form表单提交有默认事件,要先阻止默认事件
+  subAddress.addEventListener('click',function(event) {
+    event = event || window.event;
+    event.preventDefault();
     hidden(modelBox);
   },false);
-
-  // 添加新地址的方法,这里根据后台返回的code值来决定是否要添加
-  function addNewAddress(){
-    var oLi = addressList.querySelector('li');
-    var name = modelBox.querySelector("#addUsername").value;
-    var province = modelBox.querySelector('#province').value;
-    var city = modelBox.querySelector('#city').value;
-    var district = modelBox.querySelector('#district').value;
-    var address = modelBox.querySelector('#address').value;
-    var tel = modelBox.querySelector('#tel').value;
-    var newLi = " <li>\n" +
-        "        <div  class=\"addressListTitle\">\n" +
-        "          <span class=\"province\">"+province+"</span><span class=\"city\">"+city+"</span>\n" +
-        "          <span class=\"name\">(<i>"+name+"</i> 收)</span>\n" +
-        "          <i class=\"delAddress fr\">删除</i>"+
-        "        </div>\n" +
-        "        <div class=\"detailAddressInfor\">\n" +
-        "          <span class=\"district\">"+district+"</span>\n" +
-        "          <span class=\"addressDetail\">"+address+"\n" +
-        "            <i class=\"addressDTel\">tel</i>\n" +
-        "          </span>\n" +
-        "        </div>\n" +
-        "      </li>";
-    addressList.innerHTML = newLi + addressList.innerHTML;
-  }
-
 
   // 删除地址
   function delAddress(target){
@@ -106,4 +93,69 @@
   function showModelBox(){
     show(modelBox);
   }
+
+
+  // ajax部分的操作
+  // 查看收货地址的ajax
+  function showAddress(){
+    myajax.get('http://h6.duchengjiu.top/shop/api_useraddress.php',{token : localStorage.token},function(error,jsondata){
+      var json = JSON.parse(jsondata);
+      var data = json['data'];
+      allAddress = data.length;
+
+      // 添加之前先清空
+      addressList.innerHTML = "";
+      for(var i = 0; i < data.length; i++){
+        addressList.innerHTML += ` <li data-id="${data[i].address_id}">
+        <div  class="addressListTitle">
+          <span class="province">${data[i].province}</span><span class="city">${data[i].city}</span>
+          <span class="name">(<i>叶家辉</i> 收)</span>
+          <i class="delAddress fr">删除</i>
+        </div>
+        <div class="detailAddressInfor">
+          <span class="district">${data[i].district}</span>
+          <span class="addressDetail">${data[i].address}
+            <i class="addressDTel">${data[i].mobile}</i>
+          </span>
+        </div>
+      </li>`
+      }
+    })
+  }
+  showAddress();
+
+  // 添加收货地址的ajax
+  subAddress.addEventListener('click',function(event){
+    event = event || window.event;
+    event.preventDefault();
+    var addAddressConForm = document.querySelector('#addAddressConForm');
+    var queryString = serializeForm(addAddressConForm);
+    console.log(queryString);
+    myajax.post('http://h6.duchengjiu.top/shop/api_useraddress.php?status=add&token='+ localStorage.token,
+        queryString,function(error,jsonData){
+          var json = JSON.parse(jsonData);
+          if(json.code === 0){
+            showAddress();
+          }
+        }
+    )
+  },false);
+
+  // 提交订单
+  subOrderBtn.addEventListener('click',function(event){
+    var selectedLi = addressList.querySelector('.selected');
+    if(!selectedLi){
+      alert("请先选择收货地址");
+    }else{
+      myajax.post('http://h6.duchengjiu.top/shop/api_order.php?token='+localStorage.token+'&status=add&debug=1',
+          {
+            address_id: selectedLi.dataset.id,
+            total_prices : 11111
+          },
+          function(error,jsonData){
+           console.log(jsonData);
+           console.log(JSON.parse(jsonData));
+          })
+    }
+  },false);
 })();
