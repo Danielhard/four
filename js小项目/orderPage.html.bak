@@ -11,6 +11,32 @@
   <link rel="stylesheet" href="css/orderPage.css">
 </head>
 <body>
+<!--<<<<<<< Updated upstream
+<!--header部分-->
+ <!-- <header id="ShoppingMallHead" class="ShoppingMallHead">
+    <div class="w">
+      <ul class="SMHLeft fl">
+        <li class="home"><i></i><a href="index.html">第五大道首页</a></li><li class="line">|</li>
+        <li class="gb-tel"><i></i>贵宾专线：4008-6767-38</li>
+      </ul>
+      <ul class="SMHRight fr">
+        <li class="login" data-name="login"><i></i><a href="login.html">登录</a></li><li class="register username" data-name="username"><i></i><a href="login.html">123456</a></li><li class="line">|</li>
+        <li class="register" data-name="register"><i></i><a href="register.html">注册</a></li><li class="login logout" data-name="logout"><i></i><a href="javascript:localStorage.clear(); location.reload();">退出</a></li><li class="line">|</li>
+        <li class="myFive"><a href="#">我的第五大道</a><i></i></li><li class="line">|</li>
+        <li class="help"><a href="#">帮助中心</a></li><li class="line">|</li>
+        <li class="phoneVersion"><a href="#">手机版下载</a><i></i></li>
+      </ul>
+    </div>
+  </header>
+
+<!--logo和搜索框部分-->
+<!--<div class="logoAndSearch clearfix">
+  <div class="w">
+    <div class="logo fl">
+      <div class="logoPic">
+        <img src="image/logo.jpg" alt="第五大道奢侈品网" title="第五大道奢侈品网">
+		
+=======  -->
 	<!--header部分-->
 	<header id="ShoppingMallHead" class="ShoppingMallHead">
 	  <div class="w">
@@ -21,13 +47,7 @@
 	    <ul class="SMHRight fr">
 	      <li class="login"><i></i><a href="login.html">登录</a></li><li class="line">|</li>
 	      <li class="register"><i></i><a href="register.html">注册</a></li><li class="line">|</li>
-	      <li class="myFive">
-          <a href="#">我的第五大道</a><i></i>
-          <ol class="myFiveList">
-            <li><a href="orderPage.html" target="_blank">我的订单</a></li>
-            <li><a href="address.html" target="_blank">我的收货地址</a></li>
-          </ol>
-        </li><li class="line">|</li>
+	      <li class="myFive"><a href="#">我的第五大道</a><i></i></li><li class="line">|</li>
 	      <li class="help"><a href="#">帮助中心</a></li><li class="line">|</li>
 	      <li class="phoneVersion"><a href="#">手机版下载</a><i></i></li>
 	    </ul>
