@@ -39,16 +39,13 @@
     });
      window.onscroll=function () {
          var windowHeight=document.body.scrollTop||document.documentElement.scrollTop;
-         console.log(getAllTop(oHomeFurnishing));
-         console.log(windowHeight);
-        if(windowHeight>getAllTop(oHot)) {
+         if(windowHeight>getAllTop(oHot)) {
+            if(!lock)return;
+            lock=false;
              // 家居
             myajax.get("http://h6.duchengjiu.top/shop/api_goods.php", {
                 "cat_id": 45, "pagesize": 8
             }, function (error, responseText) {
-                console.log(lock);
-                if(!lock)return;
-               lock=false;
                 var json = JSON.parse(responseText);
                 console.log(json);
                 var data = json.data;
@@ -73,12 +70,12 @@
             });
         }
         if(windowHeight>getAllTop(oFurniture)){
+            if(!lock2)return;
+            lock2=false;
             //家具
             myajax.get("http://h6.duchengjiu.top/shop/api_goods.php",{
                 "cat_id":55 ,"pagesize":8
             },function (error,responseText) {
-                if(!lock2)return;
-                lock2=false;
                 var json=JSON.parse(responseText);
                 console.log(json);
                 var data=json.data;
@@ -103,12 +100,12 @@
             });
         }
         if(windowHeight>getAllTop(oFurniture)){
+            if(!lock3)return;
+            lock3=false;
             //文具
             myajax.get("http://h6.duchengjiu.top/shop/api_goods.php",{
                 "cat_id":62 ,"pagesize":8
             },function (error,responseText) {
-                if(!lock3)return;
-                lock3=false;
                 var json=JSON.parse(responseText);
                 console.log(json);
                 var data=json.data;
@@ -133,12 +130,12 @@
             });
         }
         if(windowHeight>getAllTop(oStationery)){
+            if(!lock4)return;
+            lock4=false;
             //数码
             myajax.get("http://h6.duchengjiu.top/shop/api_goods.php",{
                 "cat_id":69 ,"pagesize":8
             },function (error,responseText) {
-                if(!lock4)return;
-                lock4=false;
                 var json=JSON.parse(responseText);
                 console.log(json);
                 var data=json.data;
@@ -163,12 +160,12 @@
             });
         }
         if(windowHeight>getAllTop(oDigital)){
+            if(!lock5)return;
+            lock5=false;
             //玩乐
             myajax.get("http://h6.duchengjiu.top/shop/api_goods.php",{
                 "cat_id":77 ,"pagesize":8
             },function (error,responseText) {
-                if(!lock5)return;
-                lock5=false;
                 var json=JSON.parse(responseText);
                 console.log(json);
                 var data=json.data;
@@ -193,12 +190,12 @@
             });
         }
         if(windowHeight>getAllTop(oFun)){
+            if(!lock6)return;
+            lock6=false;
             //厨卫
             myajax.get("http://h6.duchengjiu.top/shop/api_goods.php",{
                 "cat_id":82 ,"pagesize":8
             },function (error,responseText) {
-                if(!lock6)return;
-                lock6=false;
                 var json=JSON.parse(responseText);
                 console.log(json);
                 var data=json.data;
@@ -223,12 +220,12 @@
             });
         }
         if(windowHeight>getAllTop(oKitchen)){
+            if(!lock7)return;
+            lock7=false;
             //美食
             myajax.get("http://h6.duchengjiu.top/shop/api_goods.php",{
                 "cat_id":92 ,"pagesize":8
             },function (error,responseText) {
-                if(!lock7)return;
-                lock7=false;
                 var json=JSON.parse(responseText);
                 console.log(json);
                 var data=json.data;
@@ -253,12 +250,12 @@
             });
         }
         if(windowHeight>getAllTop(oFood)){
+            if(!lock8)return;
+            lock8=false;
             //童装
             myajax.get("http://h6.duchengjiu.top/shop/api_goods.php",{
                 "cat_id":125 ,"pagesize":8
             },function (error,responseText) {
-                if(!lock8)return;
-                lock8=false;
                 var json=JSON.parse(responseText);
                 console.log(json);
                 var data=json.data;
