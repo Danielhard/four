@@ -4,8 +4,6 @@
 	var oShowUsername = document.querySelector('li[data-name=username]');
 	var oShowLogout = document.querySelector('li[data-name=logout]');
 	if (localStorage.username) {
-		console.log(oShowUsername);
-		console.log(oShowLogout);
 		hidden(oShowLogin);
 		hidden(oShowRegister);
 		oShowUsername.innerText = localStorage.username;
