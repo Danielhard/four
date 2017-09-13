@@ -82,5 +82,4 @@
     changeClass(allCircleList,iNow,'current');
     animate(allLi[iNow],{left: 0},300,'Quad.easeOut')
   }
-
 })();

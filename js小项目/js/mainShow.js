@@ -85,7 +85,6 @@
            "cat_id": cat_id, "pagesize": pagesize
          }, function(error, responseText) {
            var json = JSON.parse(responseText);
-           console.log(json);
            var data = json.data;
            targetDom.innerHTML = '';
            for (var i = 0; i < data.length; i++) {

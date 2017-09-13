@@ -109,7 +109,7 @@
         addressList.innerHTML += ` <li data-id="${data[i].address_id}">
         <div  class="addressListTitle">
           <span class="province">${data[i].province}</span><span class="city">${data[i].city}</span>
-          <span class="name">(<i>叶家辉</i> 收)</span>
+          <span class="name">(<i>${data[i].consignee}</i> 收)</span>
           <i class="delAddress fr">删除</i>
         </div>
         <div class="detailAddressInfor">
