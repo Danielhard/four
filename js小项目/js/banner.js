@@ -56,6 +56,7 @@
       bannerMove('left');
     },3000);
   }
+  autoMOve();
 
 // 控制轮播图移动
   function bannerMove(direction,n){

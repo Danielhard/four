@@ -4,11 +4,10 @@
 
     myajax.get("http://h6.duchengjiu.top/shop/api_cat.php",{},function (error,responseText) {
         var json=JSON.parse(responseText);
-        console.log(json);
         var data=json.data;
         for(var i=0;i<data.length;i++){
             var obj=data[i];
-            oProList.innerHTML+=` <li class="proListItem" data-index="0">
+            oProList.innerHTML+=` <li class="proListItem" data-index=${i}>
        <a href="goodsList.html?cat_id=${obj.cat_id}">${obj.cat_name}</a></li>`;
         }
         var navLi = document.querySelector('#proList').querySelectorAll('li');
@@ -19,7 +18,6 @@
     myajax.get("http://h6.duchengjiu.top/shop/api_goods.php",
         {cat_id ,"pagesize":12},function (error,responseText) {
         var json=JSON.parse(responseText);
-        console.log(json);
         var data=json.data;
         for(var i=0;i<data.length;i++){
             var obj=data[i];
@@ -44,7 +42,6 @@
     
     //		hanlun
 		var oGoodsSearch = document.querySelector('input[name=search_text]');
-		console.log(oGoodsSearch);
     oGoodsSearch.onkeyup = function(event) {
     	event = event || window.event;
     	event.preventDefault();
@@ -53,14 +50,12 @@
     	}
   	}
     var oGoodsSearch1 = document.querySelector('input[name=searchBtn]');
-		console.log(oGoodsSearch);
     oGoodsSearch1.onclick = function(event) {
     	event = event || window.event;
     	event.preventDefault();
       location.href='goodsSearch.html?search_text=' + oGoodsSearch.value;
   	}
 		var search_text = matchQueryString('search_text');
-		console.log(search_text);
 			myajax.get('http://h6.duchengjiu.top/shop/api_goods.php',{
 				search_text,pagesize:12
 			},function(error,responseText){

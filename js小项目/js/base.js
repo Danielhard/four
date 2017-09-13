@@ -57,7 +57,7 @@ function throttleFun(fn,time,obj,context) {
   for (var k in obj) {
     arr.push(obj[k]);
   }
-  console.log(arr);
+  //console.log(arr);
   fn.timer = setTimeout(function() {
     fn.apply(context,arr);
   },time)

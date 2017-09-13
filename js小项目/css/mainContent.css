@@ -35,7 +35,9 @@
 }
 
 .proContain .mainProList{
+  height: 808px;
   padding: 20px 0;
+  position: relative;
   /*border: 1px solid #ccc;*/
 }
 

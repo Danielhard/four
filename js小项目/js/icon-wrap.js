@@ -1,6 +1,5 @@
 (function () {
 	var oIconLi = document.querySelectorAll('.icon-li');
-  	console.log(oIconLi);
   	function ani(obj){
 	    timer=setInterval(function(){
 	        if(parseInt(obj.style.width)<160){     //如果传入的对象的宽小于700px
@@ -13,7 +12,6 @@
   	for (var i=0;i<oIconLi.length;i++) {
 			oIconLi[i].index=i;         //循环把i的值赋值给li的index
 	    var timer;
-			console.log(i);
 	    oIconLi[i].onmouseenter=function(){
 	        for(var i=0;i<oIconLi.length;i++){
 	            oIconLi[i].style.width='30px';   //当鼠标移入到某个li时，遍历循环数组，把所有li的宽都设置为30px

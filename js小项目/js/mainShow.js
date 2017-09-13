@@ -16,8 +16,8 @@
         "pagesize":8
     },function (error,responseText) {
         var json=JSON.parse(responseText);
-        console.log(json);
         var data=json.data;
+        oHot.innerHTML = '';
         for(var i=0;i<data.length;i++){
             var obj=data[i];
             oHot.innerHTML+=`
@@ -28,7 +28,7 @@
               <div class="mark"></div>
               </div>
               <div class="ProListInfor">
-               <h3 class="ProName" title="仅重600g便携蓝牙音箱 丹麦设计 专业级音质 防滑防水 长续航">${obj.goods_name}</h3>
+               <h3 class="ProName" title="${obj.goods_name}">${obj.goods_name}</h3>
               <p class="des">${obj.goods_desc}</p>
               <span class="price"><i>&yen;</i>${obj.price}</span>
               </div>
@@ -37,231 +37,60 @@
               `;
         }
     });
+
+
      window.onscroll=function () {
          var windowHeight=document.body.scrollTop||document.documentElement.scrollTop;
          if(windowHeight>getAllTop(oHot)) {
-            if(!lock)return;
-            lock=false;
-             // 家居
-            myajax.get("http://h6.duchengjiu.top/shop/api_goods.php", {
-                "cat_id": 45, "pagesize": 8
-            }, function (error, responseText) {
-                var json = JSON.parse(responseText);
-                console.log(json);
-                var data = json.data;
-                for (var i = 0; i < data.length; i++) {
-                    var obj = data[i];
-                    oHomeFurnishing.innerHTML += `
-              <li class="mainProListItem">
-              <a href="goodsDetail.html?goods_id=${obj.goods_id}">
-              <div class="ProListImg">
-              <img src="${obj.goods_thumb}"/>
-              <div class="mark"></div>
-              </div>
-              <div class="ProListInfor">
-               <h3 class="ProName" title="仅重600g便携蓝牙音箱 丹麦设计 专业级音质 防滑防水 长续航">${obj.goods_name}</h3>
-              <p class="des">${obj.goods_desc}</p>
-              <span class="price"><i>&yen;</i>${obj.price}</span>
-              </div>
-              </a>
-              </li>
-              `;
-                }
-            });
+
+           // 这里加延时器的目的主要是为了：减少请求的次数
+           throttleFun(addProList,30,{targetDom : oHomeFurnishing,id:45,size:8});
+        }
+        if(windowHeight>getAllTop(oHomeFurnishing)){
+          throttleFun(addProList,30,{targetDom : oFurniture,id:55,size:8});
         }
         if(windowHeight>getAllTop(oFurniture)){
-            if(!lock2)return;
-            lock2=false;
-            //家具
-            myajax.get("http://h6.duchengjiu.top/shop/api_goods.php",{
-                "cat_id":55 ,"pagesize":8
-            },function (error,responseText) {
-                var json=JSON.parse(responseText);
-                console.log(json);
-                var data=json.data;
-                for(var i=0;i<data.length;i++){
-                    var obj=data[i];
-                    oFurniture.innerHTML+=`
-              <li class="mainProListItem">
-              <a href="goodsDetail.html?goods_id=${obj.goods_id}">
-              <div class="ProListImg">
-              <img src="${obj.goods_thumb}"/>
-              <div class="mark"></div>
-              </div>
-              <div class="ProListInfor">
-               <h3 class="ProName" title="仅重600g便携蓝牙音箱 丹麦设计 专业级音质 防滑防水 长续航">${obj.goods_name}</h3>
-              <p class="des">${obj.goods_desc}</p>
-              <span class="price"><i>&yen;</i>${obj.price}</span>
-              </div>
-              </a>
-              </li>
-              `;
-                }
-            });
-        }
-        if(windowHeight>getAllTop(oFurniture)){
-            if(!lock3)return;
-            lock3=false;
-            //文具
-            myajax.get("http://h6.duchengjiu.top/shop/api_goods.php",{
-                "cat_id":62 ,"pagesize":8
-            },function (error,responseText) {
-                var json=JSON.parse(responseText);
-                console.log(json);
-                var data=json.data;
-                for(var i=0;i<data.length;i++){
-                    var obj=data[i];
-                    oStationery.innerHTML+=`
-              <li class="mainProListItem">
-              <a href="goodsDetail.html?goods_id=${obj.goods_id}">
-              <div class="ProListImg">
-              <img src="${obj.goods_thumb}"/>
-              <div class="mark"></div>
-              </div>
-              <div class="ProListInfor">
-               <h3 class="ProName" title="仅重600g便携蓝牙音箱 丹麦设计 专业级音质 防滑防水 长续航">${obj.goods_name}</h3>
-              <p class="des">${obj.goods_desc}</p>
-              <span class="price"><i>&yen;</i>${obj.price}</span>
-              </div>
-              </a>
-              </li>
-              `;
-                }
-            });
+          throttleFun(addProList,30,{targetDom : oStationery,id:62,size:8});
         }
         if(windowHeight>getAllTop(oStationery)){
-            if(!lock4)return;
-            lock4=false;
-            //数码
-            myajax.get("http://h6.duchengjiu.top/shop/api_goods.php",{
-                "cat_id":69 ,"pagesize":8
-            },function (error,responseText) {
-                var json=JSON.parse(responseText);
-                console.log(json);
-                var data=json.data;
-                for(var i=0;i<data.length;i++){
-                    var obj=data[i];
-                    oDigital.innerHTML+=`
-              <li class="mainProListItem">
-              <a href="goodsDetail.html?goods_id=${obj.goods_id}">
-              <div class="ProListImg">
-              <img src="${obj.goods_thumb}"/>
-              <div class="mark"></div>
-              </div>
-              <div class="ProListInfor">
-               <h3 class="ProName" title="仅重600g便携蓝牙音箱 丹麦设计 专业级音质 防滑防水 长续航">${obj.goods_name}</h3>
-              <p class="des">${obj.goods_desc}</p>
-              <span class="price"><i>&yen;</i>${obj.price}</span>
-              </div>
-              </a>
-              </li>
-              `;
-                }
-            });
+          throttleFun(addProList,30,{targetDom : oDigital,id:69,size:8});
         }
         if(windowHeight>getAllTop(oDigital)){
-            if(!lock5)return;
-            lock5=false;
-            //玩乐
-            myajax.get("http://h6.duchengjiu.top/shop/api_goods.php",{
-                "cat_id":77 ,"pagesize":8
-            },function (error,responseText) {
-                var json=JSON.parse(responseText);
-                console.log(json);
-                var data=json.data;
-                for(var i=0;i<data.length;i++){
-                    var obj=data[i];
-                    oFun.innerHTML+=`
-              <li class="mainProListItem">
-              <a href="goodsDetail.html?goods_id=${obj.goods_id}">
-              <div class="ProListImg">
-              <img src="${obj.goods_thumb}"/>
-              <div class="mark"></div>
-              </div>
-              <div class="ProListInfor">
-               <h3 class="ProName" title="仅重600g便携蓝牙音箱 丹麦设计 专业级音质 防滑防水 长续航">${obj.goods_name}</h3>
-              <p class="des">${obj.goods_desc}</p>
-              <span class="price"><i>&yen;</i>${obj.price}</span>
-              </div>
-              </a>
-              </li>
-              `;
-                }
-            });
+          throttleFun(addProList,30,{targetDom : oFun,id:77,size:8});
         }
         if(windowHeight>getAllTop(oFun)){
-            if(!lock6)return;
-            lock6=false;
-            //厨卫
-            myajax.get("http://h6.duchengjiu.top/shop/api_goods.php",{
-                "cat_id":82 ,"pagesize":8
-            },function (error,responseText) {
-                var json=JSON.parse(responseText);
-                console.log(json);
-                var data=json.data;
-                for(var i=0;i<data.length;i++){
-                    var obj=data[i];
-                    oKitchen.innerHTML+=`
-              <li class="mainProListItem">
-              <a href="goodsDetail.html?goods_id=${obj.goods_id}">
-              <div class="ProListImg">
-              <img src="${obj.goods_thumb}"/>
-              <div class="mark"></div>
-              </div>
-              <div class="ProListInfor">
-               <h3 class="ProName" title="仅重600g便携蓝牙音箱 丹麦设计 专业级音质 防滑防水 长续航">${obj.goods_name}</h3>
-              <p class="des">${obj.goods_desc}</p>
-              <span class="price"><i>&yen;</i>${obj.price}</span>
-              </div>
-              </a>
-              </li>
-              `;
-                }
-            });
+          throttleFun(addProList,30,{targetDom : oKitchen,id:82,size:8});
         }
         if(windowHeight>getAllTop(oKitchen)){
-            if(!lock7)return;
-            lock7=false;
-            //美食
-            myajax.get("http://h6.duchengjiu.top/shop/api_goods.php",{
-                "cat_id":92 ,"pagesize":8
-            },function (error,responseText) {
-                var json=JSON.parse(responseText);
-                console.log(json);
-                var data=json.data;
-                for(var i=0;i<data.length;i++){
-                    var obj=data[i];
-                    oFood.innerHTML+=`
-              <li class="mainProListItem">
-              <a href="goodsDetail.html?goods_id=${obj.goods_id}">
-              <div class="ProListImg">
-              <img src="${obj.goods_thumb}"/>
-              <div class="mark"></div>
-              </div>
-              <div class="ProListInfor">
-               <h3 class="ProName" title="仅重600g便携蓝牙音箱 丹麦设计 专业级音质 防滑防水 长续航">${obj.goods_name}</h3>
-              <p class="des">${obj.goods_desc}</p>
-              <span class="price"><i>&yen;</i>${obj.price}</span>
-              </div>
-              </a>
-              </li>
-              `;
-                }
-            });
+          throttleFun(addProList,30,{targetDom : oFood,id:92,size:8});
         }
         if(windowHeight>getAllTop(oFood)){
-            if(!lock8)return;
-            lock8=false;
-            //童装
-            myajax.get("http://h6.duchengjiu.top/shop/api_goods.php",{
-                "cat_id":125 ,"pagesize":8
-            },function (error,responseText) {
-                var json=JSON.parse(responseText);
-                console.log(json);
-                var data=json.data;
-                for(var i=0;i<data.length;i++){
-                    var obj=data[i];
-                    ochildWear.innerHTML+=`
+          throttleFun(addProList,30,{targetDom : ochildWear,id:125,size:8});
+        }
+     }
+
+     // 判断当前dom元素是否不含子元素
+     function isEmpty(targetDom){
+       if(targetDom.children.length === 0){
+         return true
+       }
+       return false;
+     }
+
+     // 添加dom的方法
+     function addProList(targetDom,cat_id,pagesize){
+       if(isEmpty(targetDom)) {
+         //童装
+         myajax.get("http://h6.duchengjiu.top/shop/api_goods.php", {
+           "cat_id": cat_id, "pagesize": pagesize
+         }, function(error, responseText) {
+           var json = JSON.parse(responseText);
+           console.log(json);
+           var data = json.data;
+           targetDom.innerHTML = '';
+           for (var i = 0; i < data.length; i++) {
+             var obj = data[i];
+             targetDom.innerHTML += `
               <li class="mainProListItem">
               <a href="goodsDetail.html?goods_id=${obj.goods_id}">
               <div class="ProListImg">
@@ -269,16 +98,16 @@
               <div class="mark"></div>
               </div>
               <div class="ProListInfor">
-               <h3 class="ProName" title="仅重600g便携蓝牙音箱 丹麦设计 专业级音质 防滑防水 长续航">${obj.goods_name}</h3>
+               <h3 class="ProName" title="${obj.goods_name}">${obj.goods_name}</h3>
               <p class="des">${obj.goods_desc}</p>
               <span class="price"><i>&yen;</i>${obj.price}</span>
               </div>
               </a>
               </li>
               `;
-                }
-            });
-        }
+           }
+         });
+       }
      }
 })();
 
