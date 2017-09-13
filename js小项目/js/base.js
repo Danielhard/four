@@ -106,8 +106,6 @@ function mousewheelHandler(event) {
   }
   return direction;
 }
-
-
 //利用正则匹配查询字符串,并返回向相应的值
 function matchQueryString(str) {
   var queryString = location.search.substr(1);

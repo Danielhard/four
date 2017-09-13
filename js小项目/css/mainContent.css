@@ -4,6 +4,7 @@
 }
 .mainProItem{
   margin-top: 20px;
+  position: relative;
 }
 .mainContent .proTitle{
   height: 40px;
@@ -11,6 +12,7 @@
   border-bottom: 1px solid #333;
   color: white;
   font-size: 14px;
+
 }
 .proTitleLeft{
   width: 263px;

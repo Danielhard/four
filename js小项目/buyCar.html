@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/index.css">
   <link rel="stylesheet" href="css/buyCar.css">
+  <link rel="stylesheet" href="css/footer.css">
 </head>
 <body>
 <!--header部分-->
@@ -16,12 +17,9 @@
       <li class="gb-tel"><i></i>贵宾专线：4008-6767-38</li>
     </ul>
     <ul class="SMHRight fr">
-      <li class="login" data-name="login"><i></i><a href="login.html">登录</a></li>
-      <li class="register username" data-name="username"><i></i><a href="login.html">123456</a></li>
-      <li class="line">|</li>
-      <li class="register" data-name="register"><i></i><a href="register.html">注册</a></li>
-      <li class="login logout" data-name="logout"><i></i><a href="javascript:localStorage.clear(); location.reload();">退出</a></li>
-      <li class="line">|</li>
+      <li class="login" data-name="login"><i></i><a href="login.html">登录</a></li><li class="register username" data-name="username"><i></i><a href="login.html">123456</a></li><li class="line">|</li>
+      <li class="register" data-name="register"><i></i><a href="register.html">注册</a></li><li class="login logout" data-name="logout"><i></i><a href="javascript:localStorage.clear(); location.reload();">退出</a></li><li class="line">|</li>
+
       <li class="myFive">
         <a href="#">我的第五大道</a><i></i>
         <ol class="myFiveList">
@@ -47,10 +45,10 @@
       </div>
     </div>
     <div class="search fr">
-      <form>
-        <input class="searchInput" type="text" name="search">
-        <input class="searchBtn" type="button" value="搜索">
-      </form>
+      <div>
+        <input class="searchInput" type="text" name="search_text">
+        <input class="searchBtn" type="button" name="searchBtn" value="搜索">
+      </div>
     </div>
   </div>
 </div>
@@ -71,45 +69,9 @@
           <li class="operation">操作</li>
         </ul>
       </div>
-      <div class="bcProListItem">
-        <div class="bcProListItemPic fl">
-          <img src="image/detailPic.jpg" alt="">
-        </div>
-        <div class="bcProListItemName fl"><a href="#">【99欢聚价】倍思指尖手机陀螺指环支架扣粘贴式环扣苹果华为通用桌面创意个性</a></div>
-        <div class="colorAndStyle fl">
-          颜色分类：B款天鹅项链（银色）
-        </div>
-        <div class="unitPrice fl">&yen;<span class="unitPriceSpan">690.00</span></div>
-        <div class="count fl">
-          <span>
-            <i class="countLeft isCount">-</i><input class="countCon" value="1"/><i class="countRight isCount">+</i>
-          </span>
-        </div>
-        <div class="singleSum fl gold">&yen;<span class="singleSumSpan">690.00</span></div>
-        <div class="operation fl">
-          <a class="operationDel" href="javascript:(0)">删除</a>
-        </div>
-      </div>
-      <div class="bcProListItem">
-        <div class="bcProListItemPic fl">
-          <img src="image/detailPic.jpg" alt="">
-        </div>
-        <div class="bcProListItemName fl"><a href="#">【99欢聚价】倍思指尖手机陀螺指环支架扣粘贴式环扣苹果华为通用桌面创意个性</a></div>
-        <div class="colorAndStyle fl">
-          颜色分类：B款天鹅项链（银色）
-        </div>
-        <div class="unitPrice fl">&yen;<span class="unitPriceSpan">690.00</span></div>
-        <div class="count fl">
-          <span>
-            <i class="countLeft isCount">-</i><input class="countCon" value="1"/><i class="countRight isCount">+</i>
-          </span>
-        </div>
-        <div class="singleSum fl gold">&yen;<span class="singleSumSpan">690.00</span></div>
-        <div class="operation fl">
-          <a class="operationDel" href="javascript:(0)">删除</a>
-        </div>
-      </div>
-    </div>
+
+     </div>
+
     <div class="totalAmount">
       <div class="totalAmountLeft fl">
         <ul>
@@ -126,8 +88,103 @@
     </div>
   </div>
 </div>
+<div id="foot" class="foot">
+  <div class="w">
+    <div class="footTop">
+      <ul class="footTopList clearfix">
+        <li><a href="#"><div class="footTopImg footTopImg01"></div><h6>正品官方保证</h6><p>品牌授权,官方验真</p></a></li>
+        <li><a href="#"><div class="footTopImg footTopImg02"></div><h6>正品官方保证</h6><p>品牌授权,官方验真</p></a></li>
+        <li><a href="#"><div class="footTopImg footTopImg03"></div><h6>正品官方保证</h6><p>品牌授权,官方验真</p></a></li>
+        <li><a href="#"><div class="footTopImg footTopImg04"></div><h6>正品官方保证</h6><p>品牌授权,官方验真</p></a></li>
+        <li><a href="#"><div class="footTopImg footTopImg05"></div><h6>正品官方保证</h6><p>品牌授权,官方验真</p></a></li>
+      </ul>
+    </div>
+    <div class="footCon clearfix">
+      <dl>
+        <dt>服务保障</dt>
+        <dd><a href="#">品牌授权正品</a></dd>
+        <dd><a href="#">品牌客服</a></dd>
+        <dd><a href="#">预约到店体验</a></dd>
+        <dd><a href="#">7天无理由退换</a></dd>
+      </dl>
+      <dl>
+        <dt>使用帮助</dt>
+        <dd><a href="#">常见问题</a></dd>
+        <dd><a href="#">会员制度</a></dd>
+        <dd><a href="#">集团采购</a></dd>
+        <dd><a href="#">礼品卡</a></dd>
+      </dl>
+      <dl>
+        <dt>支付方式</dt>
+        <dd><a href="#">到店付款</a></dd>
+        <dd><a href="#">货到付款</a></dd>
+        <dd><a href="#">在线支付</a></dd>
+        <dd><a href="#">余额支付</a></dd>
+        <dd><a href="#">分期付款</a></dd>
+      </dl>
+      <dl>
+        <dt>配送方式</dt>
+        <dd><a href="#">配送说明</a></dd>
+        <dd><a href="#">专柜自提</a></dd>
+        <dd><a href="#">运费说明</a></dd>
+        <dd><a href="#">验货签收</a></dd>
+      </dl>
+      <dl>
+        <dt>售后服务</dt>
+        <dd><a href="#">品牌售后</a></dd>
+        <dd><a href="#">售后咨询</a></dd>
+        <dd><a href="#">退换政策</a></dd>
+        <dd><a href="#">发票保障</a></dd>
+      </dl>
+      <dl class="appAndWeiBo">
+        <dt>第五大道APP</dt>
+        <dd><a href="#"><img src="image/footer_message06.jpg" /></a></dd>
+      </dl>
+      <dl class="appAndWeiBo">
+        <dt>第五大道微博</dt>
+        <dd><a href="#"><img src="image/footer_message07.jpg" /></a></dd>
+      </dl>
+    </div>
+    <div class="footBtm">
+      <p class="footNav">
+        <a href="#">箱包</a>  <span class="line">|</span>
+        <a href="#">美妆</a>  <span class="line">|</span>
+        <a href="#">服饰</a>  <span class="line">|</span>
+        <a href="#">腕表</a>  <span class="line">|</span>
+        <a href="#">配饰</a>  <span class="line">|</span>
+        <a href="#">鞋靴</a>  <span class="line">|</span>
+        <a href="#">特惠</a>  <span class="line">|</span>
+        <a href="#">礼品区</a>
+      </p>
+      <p class="aboutUs">
+        <a href="#">关于第五大道</a>  <span class="line">|</span>
+        <a href="#">网站地图</a>  <span class="line">|</span>
+        <a href="#">品牌合作专区</a>  <span class="line">|</span>
+        <a href="#">媒体聚焦</a>  <span class="line">|</span>
+        <a href="#">商务合作</a>  <span class="line">|</span>
+        <a href="#">商家合作</a>  <span class="line">|</span>
+        <a href="#">加入第五大道</a>  <span class="line">|</span>
+        <a href="#">友情链接</a>  <span class="line">|</span>
+        <a href="#">奢尚志</a> <span class="line">|</span>
+        <a href="#">联系我们</a>  <span class="line">|</span>
+        <a href="#">投诉建议</a>
+      </p>
+      <p class="copyRight">Copyright © 2008-2016 瑞美嘉信国际信息技术（北京）有限公司  版权所有京ICP备09012701号-1 京公网安备110105007400号 食品经营许可证号：</p>
+      <p class="certificationMark">
+        <a href="#"><img src="image/14567178388519.jpg" alt=""></a>
+        <a href="#"><img src="image/footer_message10.jpg" alt=""></a>
+        <a href="#"><img src="image/footer_message11.jpg" alt=""></a>
+      </p>
+      <!--certificationMark：认证标识-->
+    </div>
+  </div>
+</div>
 <script type="text/javascript" src="js/base.js"></script>
+<script type="text/javascript" src="js/myajax.js"></script>
+<script type="text/javascript" src="js/index-login.js"></script>
+<script type="text/javascript" src="js/buyCar-Ajax.js"></script>
 <script type="text/javascript" src="js/index-login.js"></script>
 <script type="text/javascript" src="js/buyCar.js"></script>
+<script type="text/javascript" src="js/goodsList.js"></script>
 </body>
 </html>
