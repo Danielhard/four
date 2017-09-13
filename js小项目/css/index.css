@@ -95,6 +95,10 @@
 .logoDesPic{
   margin: 15px 0 0 50px;
 }
+.logoPic>img{
+  display: block;
+  height: 108px;
+}
 .search{
   float: left;
   margin: 36px 0 0 55px;

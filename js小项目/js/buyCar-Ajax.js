@@ -1,4 +1,5 @@
 (function(){
+    var sumPrice = document.querySelector('#sumPrice');
     var oBcProListCon=document.querySelector("#bcProListCon");
     var delAll=document.querySelector(".delAll");
     var token=matchQueryString("token");
@@ -73,6 +74,12 @@
                    })
            })(branch)
        }
+
+        // 移除全部商品
+       for(var i = oGoodsDiv - 1; i >= 0; i--){
+           oGoodsDiv[i].parentNode.removeChild(oGoodsDiv[i]);
+       }
+      sumPrice.innerText = 0;
     });
 
     function changeTotalAmount(){
