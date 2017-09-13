@@ -7,13 +7,15 @@
 			},function(error,responseText){
 				var json = JSON.parse(responseText);
 				var obj = json.data[0];
-				oDiv.innerHTML = `<div class="productDetailLeft" >
+				oDiv.innerHTML = `<div class="productDetailLeft" name="bigo">
 		      <div class="productDetailImgB">
 		      	<img src="${obj.goods_thumb}" alt="">
 		      	</div>
 		      <div class="productDetailImgS">
 		        <img src="${obj.goods_thumb}" alt="">
 		      </div>
+		         <div class="zoom"></div>
+		         <div class="bigPic"></div>
 		    </div>
 		    <div class="productDetailRight">
 		      <h3>${obj.goods_name}</h3>
@@ -24,11 +26,14 @@
 		        <span class="addCar" id="addCar" data-name="addCar">加入购物袋</span>
 		      </div>
 		    </div>`;
+        var oBigPic=document.querySelector(".bigPic");
+        oBigPic.style.backgroundImage="url("+obj.goods_thumb+")";
+        oBigPic.style.backgroundRepeat="no-repeat";
 		var oSpanAddCar = document.querySelector('span[data-name=addCar]');
 		oSpanAddCar.onclick = function(){
-			event = event || window.event;
-      var target = event.target || event.srcElement;
-      if (target.id === 'addCar') {
+	    	event = event || window.event;
+         var target = event.target || event.srcElement;
+         if (target.id === 'addCar') {
      		console.log('添加到购物车');
      		if (!localStorage.token) {
      			alert('请先登录');
@@ -48,6 +53,6 @@
      		}
 			}
 		}
+		Zoom();
 	});
-
 })()

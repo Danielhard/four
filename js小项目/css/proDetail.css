@@ -5,6 +5,7 @@
 }
 .productDetailLeft{
   float: left;
+  position:relative;
 }
 .productDetailImgB{
   width: 480px;
@@ -57,4 +58,26 @@
   margin-right: 20px;
   cursor: pointer;
   border-radius: 2px;
+}
+.productDetailImgB:hover{
+    cursor: move;
+    opacity: 0.4;
+}
+.bigPic{
+    width: 480px;
+    height:480px;
+    position: absolute;
+    top: 0px;
+    left: 480px;
+    background-size: 960px 960px;
+    display: none;
+}
+.zoom{
+    position: absolute;
+    width:238px;
+    height:238px;
+    top:0;
+    left:0;
+    border:1px solid #333333;
+    display: none;
 }
