@@ -48,7 +48,6 @@
     `;
 	  }
 	  var oOrder = document.querySelectorAll('span[name=order]');
-	  var oTablebox = document.querySelector('table');
 		for(var i = 0 ; i < oOrder.length;i ++){
 			  oOrder[i].index = i;
 				oOrder[i].onclick = function(event) {
@@ -64,7 +63,7 @@
 			      var json = JSON.parse(responseText);
 			      if (json.code === 0) {
 			        alert('订单删除成功！');
-			        oTable.removeChild(oTablebox);
+			        oOrder[self.index].parentNode.parentNode.parentNode.parentNode.parentNode.removeChild(oOrder[self.index].parentNode.parentNode.parentNode.parentNode);
 			      }
 			    });
 			  }
