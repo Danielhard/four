@@ -31,4 +31,7 @@
   }else{
     oDt.classList.remove('current');
   }
+
+  // 显示购物车中商品数量
+  showProCount();
 })();

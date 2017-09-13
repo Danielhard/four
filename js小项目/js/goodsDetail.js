@@ -47,6 +47,7 @@
         			var json = JSON.parse(responseText);
         			console.log(json);
         			if (json.code === 0) {
+        				showProCount();
           			alert('添加到购物车成功');
         			}
       		});

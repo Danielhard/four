@@ -153,8 +153,13 @@
             total_prices : 11111
           },
           function(error,jsonData){
-           console.log(jsonData);
-           console.log(JSON.parse(jsonData));
+           var json = JSON.parse(jsonData);
+           console.log(json);
+           if(json.code === 0){
+             alert("订单提交成功");
+           }else{
+             alert("订单提交出错");
+           }
           })
     }
   },false);
