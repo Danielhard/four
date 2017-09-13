@@ -62,7 +62,7 @@
 		var search_text = matchQueryString('search_text');
 		console.log(search_text);
 			myajax.get('http://h6.duchengjiu.top/shop/api_goods.php',{
-				search_text
+				search_text,pagesize:12
 			},function(error,responseText){
 				var json = JSON.parse(responseText);
 				var data = json.data;

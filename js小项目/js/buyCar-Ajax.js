@@ -29,6 +29,7 @@
         </div>
       </div>
             `;
+            changeTotalAmount();
         }
      });
     oBcProListCon.addEventListener("click",function (event) {
@@ -72,6 +73,16 @@
                    })
            })(branch)
        }
-    })
+    });
+
+    function changeTotalAmount(){
+        var sum = 0;
+        var allBcProListItem = document.querySelectorAll('.bcProListItem');
+        for(var i = 0; i < allBcProListItem.length; i++){
+            sum += parseInt(allBcProListItem[i].querySelector('.singleSumSpan').innerText);
+        }
+        sumPrice.innerText = sum;
+    }
+
 })()
 
