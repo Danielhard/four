@@ -2,17 +2,17 @@
   margin-top: 10px;
 }
 .orderPageWrap{
-  width: 1000px;
+  width: 1200px;
   margin: 0 auto;
 }
 .order-top{
-	width: 1000px;
+	width: 1200px;
 	height: 30px;
 	border-bottom: 2px solid #e8e8e8;
 	box-sizing: border-box;
 }
 .order-top li{
-	width: 111px;
+	width: 133px;
 	height: 30px;
 	border-bottom: 2px solid #e8e8e8;
 	box-sizing: border-box;
@@ -39,22 +39,22 @@
 	color: #AAAAAA;
 }
 .osearch {
-	width: 1000px;
+	width: 1200px;
 	height: 78px;
 }
 .useless {
-	width: 1000px;
+	width: 1200px;
 	height: 26px;
 }
 .search-ipt{
-	width: 317px;
+	width: 400px;
 	height: 24px;
 /*	margin-top: 26px;*/
 	float: left;
 	border: 1px solid #C69C6D;
 }
 .searchinput {
-	width: 233px;
+	width: 316px;
 	height: 22px;
 	border: none;
 }
@@ -70,12 +70,11 @@
 	float: left;
 }
 .order-title {
-	width: 1000px;
+	width: 1200px;
 	height: 40px;
 	font-weight: 600;
-	margin-top: 20px;
 	background-color: #f5f5f5;
-	border: 1px solid #e8e8e8;
+	border-bottom: 1px solid #CF0101;
 	box-sizing: border-box;
 }
 .ospan, .ospans{
@@ -85,13 +84,13 @@
 	text-align: center;
 }
 .ospan {
-	width: 396px;
+	width: 400px;
 }
 .ospans {
-	width: 100px;
+	width: 133px;
 }
 .order-page {
-	width: 1000px;
+	width: 1200px;
 	height: 40px;
 }
 .opage {
@@ -104,50 +103,60 @@
 	background-color: #FFFFFF;
 }
 .order-detail {
-	width: 1000px;
+	width: 1200px;
 }
 /*table*/
 table {
-	width: 1000px;
-	border: 1px solid #DFDFDF;
+	width: 1200px;
+	border: 1px solid #CF0101;
 	margin-bottom: 20px;
 }
 thead {
 	background-color: #DFDFDF;
 }
 th {
-	width: 330px;
-	height: 30px;
+	width: 133px;
+	height: 40px;
+	text-align: left;
+	margin-left: 20px;
+	vertical-align: middle;
+	border-bottom: 1px solid #CF0101;
+}
+tr+tr {
+	border-top: 1px solid #F2F2F2;
 }
 td {
-	width: 100px;
-	height: 100px;
+	width: 133px;
 	text-align: center;
-	
+	vertical-align: middle;
 }
 .tb-mon, .tb-teal {
-	border-left:1px solid #CF0101;
+	border-left:1px solid #F2F2F2;
 }
 td img {
 	border: none;
-	width: 95px;
-	height: 95px;
-	margin: 5px;
+	width: 113px;
+	height: 113px;
+	margin: 10px;
 }
 .cancel-order {
 	display: block;
 	outline: none;
-	width: 90px;
+	width: 25px;
 	text-align: center;
-	line-height:25px;
-	color:#fff;
+	height:20px;
 	float: right;
-	border:1px solid orange;
-	background-color: #C69C6D;
-	border-radius: 13px;
+	background-color: #DFDFDF;
+	background: url(../image/delete.png) center no-repeat;
+	border-radius: 5px;
 	margin-right: 10px;
+}
+.cancel-order:hover {
+	background-color: #C69C6D;
+	cursor: pointer;
 }
 h1 {
 	color: red;
-	margin-left: 430px;
+	font-size: 30px;
+	margin-left: 510px;
 }
