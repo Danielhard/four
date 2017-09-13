@@ -25,9 +25,11 @@ function Zoom() {
         event=event||window.event;
         var currentTarget = event.currentTarget;
         if(currentTarget.className==="productDetailLeft"){
+
             oZoom.style.display = 'none';
 
             oBigPic.style.display = 'none';
+
          }
       }
         oProductDetailLeft.onmousemove = function (event) {
@@ -79,6 +81,14 @@ function Zoom() {
             allLeft += currentObj.offsetLeft;
         }
         return allLeft;
+    }
+    function setAlphaOpacity(elm,value){
+        elm=typeof elm=="string"?document.getElementById(elm):elm;
+        if(document.all){
+            elm.style.filter='alpha(opacity='+value+')';
+        }else{
+            elm.style.opacity=value/100;
+        }
     }
 }
 
