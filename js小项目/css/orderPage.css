@@ -73,8 +73,7 @@
 	width: 1200px;
 	height: 40px;
 	font-weight: 600;
-	background-color: #f5f5f5;
-	border-bottom: 1px solid #CF0101;
+	background: linear-gradient(to top, #dfdfdf, #f2f2f2);
 	box-sizing: border-box;
 }
 .ospan, .ospans{
@@ -108,11 +107,11 @@
 /*table*/
 table {
 	width: 1200px;
-	border: 1px solid #CF0101;
+	border: 1px solid #c69c6d;
 	margin-bottom: 20px;
 }
 thead {
-	background-color: #DFDFDF;
+	background-color: #f2f2f2;
 }
 th {
 	width: 133px;
@@ -121,7 +120,7 @@ th {
 	margin-left: 20px;
 	font-weight: 700;
 	vertical-align: middle;
-	border-bottom: 1px solid #CF0101;
+	border-bottom: 1px solid #c69c6d;
 }
 tr+tr {
 	border-top: 1px solid #F2F2F2;
