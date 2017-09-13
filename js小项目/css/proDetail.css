@@ -59,10 +59,6 @@
   cursor: pointer;
   border-radius: 2px;
 }
-.productDetailImgB:hover{
-    cursor: move;
-    opacity: 0.4;
-}
 .bigPic{
     width: 480px;
     height:480px;
@@ -80,4 +76,9 @@
     left:0;
     border:1px solid #333333;
     display: none;
+    opacity: 0.4;
+    background: white;
+}
+.zoom:hover{
+    cursor: move;
 }
