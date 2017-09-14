@@ -36,9 +36,11 @@
          if (target.id === 'addCar') {
      		console.log('添加到购物车');
      		if (!localStorage.token) {
-     			alert('请先登录');
-     			localStorage.backurl = location.href;
- 				location.href = "login.html";
+     			toast('请先登录',2000);
+     			setTimeout(function(){
+     				localStorage.backurl = location.href;
+     				location.href = "login.html";
+     			},2100);
  				return;
      		} else{
      			myajax.post('http://h6.duchengjiu.top/shop/api_cart.php?token='+localStorage.token,
@@ -48,7 +50,7 @@
         			console.log(json);
         			if (json.code === 0) {
         				showProCount();
-          			alert('添加到购物车成功');
+          			toast('添加到购物车成功',1500);
         			}
       		});
      		}

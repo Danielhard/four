@@ -145,7 +145,7 @@
   subOrderBtn.addEventListener('click',function(event){
     var selectedLi = addressList.querySelector('.selected');
     if(!selectedLi){
-      alert("请先选择收货地址");
+      toast("请先选择收货地址",1500);
     }else{
       myajax.post('http://h6.duchengjiu.top/shop/api_order.php?token='+localStorage.token+'&status=add&debug=1',
           {
@@ -156,9 +156,9 @@
            var json = JSON.parse(jsonData);
            console.log(json);
            if(json.code === 0){
-             alert("订单提交成功");
+             toast("订单提交成功",1500);
            }else{
-             alert("订单提交出错");
+             toast("订单提交出错",1500);
            }
           })
     }
