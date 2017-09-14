@@ -35,9 +35,6 @@
 .gb-tel>i{
   background: url("../image/sprite.png") -350px -345px no-repeat;
 }
-.login>a:hover{
-  color: #d00000;
-}
 .register>i{
   float: left;           /*只设置了一边的浮动在低版本浏览器中会出现问题*/
   width: 24px;
@@ -45,6 +42,9 @@
   vertical-align: middle;
   background: url("../image/youli.gif") top center no-repeat;
   margin-right: 8px;
+}
+.login,.register{
+  display: none;
 }
 .myFive{
   position: relative;
@@ -92,7 +92,13 @@
 .logo>div{
   float: left;
 }
+.logo .logoPic{
+  width: 240px;
+  height: 110px;
+}
 .logoDesPic{
+  width: 142px;
+  height: 80px;
   margin: 15px 0 0 50px;
 }
 .logoPic>img{
@@ -136,7 +142,7 @@
   color: #999;
 }
 .hotSearchList>li a:hover{
-  color: #d00000;
+  color: #c8a985;
 }
 .hotSearchList>li+li{
   padding-left: 25px;

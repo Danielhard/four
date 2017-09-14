@@ -1,6 +1,7 @@
 (function(){
   var oNav = document.querySelector('#main-nav');
   var oDt = document.querySelector("#proClassify").querySelector('dt');
+  var mainContent = document.querySelector('#mainContent');
   oNav.addEventListener('click',function(event){
     var oLi;
     event = event || window.event;
@@ -34,4 +35,5 @@
 
   // 显示购物车中商品数量
   showProCount();
+
 })();

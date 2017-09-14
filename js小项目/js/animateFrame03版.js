@@ -73,7 +73,6 @@ function animate(elem, jsonEnd, time, moveWay, callback) {
   for (var k in jsonEnd) {
     if(k === 'scrollTop' || k === 'scrollLeft'){              //03版这里多了一个scrollTop，scrollLeft的判断
       startJson[k] = elem.body[k] || elem.documentElement[k];
-      console.log(startJson[k]);
     }else {
       startJson[k] = parseFloat(getStyle(elem, k));
     }

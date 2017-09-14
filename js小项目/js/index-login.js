@@ -15,4 +15,4 @@
 		hidden(oShowUsername);
 		hidden(oShowLogout);
 	}
-})()
+})();
