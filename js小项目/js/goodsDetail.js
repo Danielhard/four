@@ -8,13 +8,13 @@
 				var json = JSON.parse(responseText);
 				var obj = json.data[0];
 				oDiv.innerHTML = `<div class="productDetailLeft" name="bigo">
-		      <div class="productDetailImgB">
+		      <div class="productDetailImgB"> 
+		        <div class="zoom"></div>
 		      	<img src="${obj.goods_thumb}" alt="">
 		      	</div>
 		      <div class="productDetailImgS">
 		        <img src="${obj.goods_thumb}" alt="">
 		      </div>
-		         <div class="zoom"></div>
 		         <div class="bigPic"></div>
 		    </div>
 		    <div class="productDetailRight">
