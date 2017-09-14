@@ -30,10 +30,10 @@ myajax.get('http://h6.duchengjiu.top/shop/api_order.php', {token: localStorage.t
         <td colspan="2" class="tb-mon">
           ${goods.goods_name}
         </td>
-        <td class="tb-mon">\¥: ${goods.goods_price}</td>
+        <td class="tb-mon">\¥&nbsp;&nbsp;${goods.goods_price}</td>
         <td class="tb-mon">${goods.goods_number}</td>
         <td class="tb-mon"><p>申请售后</p><p>投诉商家</p></td>
-        <td class="tb-mon">\¥: ${sum}</td>
+        <td class="tb-mon">\¥&nbsp;&nbsp;${sum}</td>
         <td class="tb-teal"><p>交易成功</p><p>订单详情</p></td>
         <td class="tb-teal"><a href="">评价</a></td>
       </tr>
@@ -45,7 +45,7 @@ myajax.get('http://h6.duchengjiu.top/shop/api_order.php', {token: localStorage.t
     	<table>
         <thead>
           <th colspan="4">&nbsp;&nbsp;&nbsp;订单号:${parseInt(Math.random()*10000000000)}${obj.order_id}</th>
-          <th colspan="4">总付款:\¥: ${sums}</th>
+          <th colspan="4">总付款:\¥&nbsp;&nbsp;${sums}</th>
           <th><span data-id="${obj.order_id}" class="cancel-order" name="order"></span></th>
         </thead>
           ${goodsHTML}
