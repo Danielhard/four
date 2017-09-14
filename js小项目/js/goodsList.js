@@ -40,22 +40,64 @@
         }
     });
     
-    
-    //		hanlun
+  //		hanlun
 		var oGoodsSearch = document.querySelector('input[name=search_text]');
+		var oSearchDiv = document.querySelector('.search-history');
+		var oSearchUlHistory = document.querySelector('#searchulhistory');
+		var lock = true;
     oGoodsSearch.onkeyup = function(event) {
     	event = event || window.event;
     	event.preventDefault();
-    	if (event.keyCode === 13) {
-        	location.href='goodsSearch.html?search_text='+this.value;
+    	if(localStorage.value){
+    		var str = localStorage.value.split('&');
+      	console.log(str);
     	}
+    	if (event.keyCode === 13) {
+				if (!localStorage.value) {
+			    			localStorage.value = this.value;
+			      }else{
+			    			localStorage.value += '&' + this.value;
+			    	}
+        location.href='goodsSearch.html?search_text='+this.value;	
+    	}
+    	
+    	if (localStorage.value !== ''){
+		    		if (!lock) return;
+		        lock = false;
+		        setTimeout(function(){
+		          lock = true;
+		        }, 10000);
+		    		for (var i=0;i<str.length;i++) {
+		    			var oLiSearch = document.createElement('li');
+							oLiSearch.innerText = str[i];
+							oSearchUlHistory.insertBefore(oLiSearch,oSearchUlHistory.children[0]);
+		    		}
+    		}
   	}
+		if(localStorage.value){
+    		var str = localStorage.value.split('&');
+      	console.log(str);
+      	oGoodsSearch.value = str[str.length-1];
+    }
+    oGoodsSearch.onkeydown= function(){
+    	if (localStorage.value) {
+    		oSearchDiv.style.display = 'block';
+    	}
+    }
+    oGoodsSearch.onblur = function(){
+    	oSearchDiv.style.display = 'none';
+    }
     var oGoodsSearch1 = document.querySelector('input[name=searchBtn]');
     oGoodsSearch1.onclick = function(event) {
     	event = event || window.event;
     	event.preventDefault();
+    	if (!localStorage.value) {
+			    			localStorage.value = oGoodsSearch.value;
+			      }else{
+			    			localStorage.value += '&' + oGoodsSearch.value;
+			    	}
       location.href='goodsSearch.html?search_text=' + oGoodsSearch.value;
-  	
+			}
 		var search_text = matchQueryString('search_text');
 			myajax.get('http://h6.duchengjiu.top/shop/api_goods.php',{
 				search_text,pagesize:12
@@ -81,8 +123,6 @@
           `;
 				}
 			});
-			}
-
 			// 显示商品数量
   showProCount();
 })();
