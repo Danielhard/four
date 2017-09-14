@@ -29,6 +29,20 @@
         var oBigPic=document.querySelector(".bigPic");
         oBigPic.style.backgroundImage="url("+obj.goods_thumb+")";
         oBigPic.style.backgroundRepeat="no-repeat";
+        var oBuyNow=document.querySelector("#buyNow");
+        var oAddCar=document.querySelector("#addCar");
+        oBuyNow.addEventListener("mouseover",function () {
+			this.style.backgroundColor="#b69a79";
+        });
+        oAddCar.addEventListener("mouseover",function () {
+            this.style.backgroundColor="#b69a79";
+        });
+        oBuyNow.addEventListener("mouseout",function () {
+           this.style.backgroundColor="#c8a985";
+        });
+        oAddCar.addEventListener("mouseout",function(){
+            this.style.backgroundColor="#c8a985";
+		})
 		var oSpanAddCar = document.querySelector('span[data-name=addCar]');
 		oSpanAddCar.onclick = function(){
 	    	event = event || window.event;

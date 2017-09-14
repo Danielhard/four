@@ -3,6 +3,7 @@
     var oBcProListCon=document.querySelector("#bcProListCon");
     var delAll=document.querySelector(".delAll");
     var token=matchQueryString("token");
+    var Account=document.querySelector(".account");
      myajax.get("http://h6.duchengjiu.top/shop/api_cart.php",{token: localStorage.token,},function(error,responseText){
         var json=JSON.parse(responseText);
         console.log(json);
@@ -33,6 +34,12 @@
             changeTotalAmount();
         }
      });
+    Account.addEventListener("mouseover",function () {
+       this.style.backgroundColor="#a4a1a1";
+    });
+    Account.addEventListener("mouseout",function () {
+        this.style.backgroundColor="#b0b0b0";
+    })
     oBcProListCon.addEventListener("click",function (event) {
         event=event||window.event;
         var target=event.target||event.srcElement;
