@@ -5,25 +5,25 @@
 	this.init();
 	this.bindEvent();
 
-	// this.bindScrollEvent();
+	 this.bindScrollEvent();
 
 }
 BackToTop.prototype.init = function() {
 	this.dom = document.querySelector(this.selector);
 }
 
-// BackToTop.prototype.bindScrollEvent = function() {
-//     var self = this;
-// 	window.onscroll = function(){
-//         var scrollTop1 = document.body.scrollTop || document.documentElement.scrollTop;
-//         console.log(scrollTop1);
-//         if (scrollTop1 > 500) {
-//             self.dom.style.display = 'block';
-//         } else {
-//             self.dom.style.display = 'none';
-//         }
-//     }
-// }
+   BackToTop.prototype.bindScrollEvent = function() {
+       var self = this;
+   	window.addEventListener('scroll',function(){
+   		 var scrollTop1 = document.body.scrollTop || document.documentElement.scrollTop;
+           console.log(scrollTop1);
+           if (scrollTop1 > 500) {
+               self.dom.style.display = 'block';
+           } else {
+               self.dom.style.display = 'none';
+           }
+   	})
+   }
 
 
 
