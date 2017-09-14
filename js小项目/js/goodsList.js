@@ -21,7 +21,8 @@
         var data=json.data;
         for(var i=0;i<data.length;i++){
             var obj=data[i];
-            oMainProList.innerHTML+=`
+            console.log(oMainProList);
+            oMainProList.innerHTML += `
             <li class="mainProListItem">
             <a href="goodsDetail.html?goods_id=${obj.goods_id}">
               <div class="ProListImg">
@@ -54,7 +55,7 @@
     	event = event || window.event;
     	event.preventDefault();
       location.href='goodsSearch.html?search_text=' + oGoodsSearch.value;
-  	}
+  	
 		var search_text = matchQueryString('search_text');
 			myajax.get('http://h6.duchengjiu.top/shop/api_goods.php',{
 				search_text,pagesize:12
@@ -80,6 +81,7 @@
           `;
 				}
 			});
+			}
 
 			// 显示商品数量
   showProCount();

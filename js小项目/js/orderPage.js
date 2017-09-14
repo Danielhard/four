@@ -69,7 +69,8 @@ myajax.get('http://h6.duchengjiu.top/shop/api_order.php', {token: localStorage.t
 			    myajax.post('http://h6.duchengjiu.top/shop/api_order.php?token='+localStorage.token+'&status=cancel', {order_id}, function(err, responseText) {
 			      var json = JSON.parse(responseText);
 			      if (json.code === 0) {
-			        alert('订单删除成功！');
+//			        alert('订单删除成功！');
+								toast("订单删除成功!",3000);
 			        oOrder[self.index].parentNode.parentNode.parentNode.parentNode.parentNode.removeChild(oOrder[self.index].parentNode.parentNode.parentNode.parentNode);			      
 			      }
 			    });
