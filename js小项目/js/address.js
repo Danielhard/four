@@ -156,9 +156,9 @@
            var json = JSON.parse(jsonData);
            console.log(json);
            if(json.code === 0){
-             toast("订单提交成功",1500);
+             toast("订单提交成功,请前往我的订单查看！",1500);
            }else{
-             toast("订单提交出错",1500);
+             toast("订单提交出错，您的购物车还未添加要购买的商品！",1500);
            }
           })
     }
