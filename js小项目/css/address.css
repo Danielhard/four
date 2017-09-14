@@ -1,5 +1,6 @@
 .addressCon{
   margin-bottom: 30px;
+  color: #333;
 }
 .addressWrap{
   width: 1000px;
@@ -42,6 +43,9 @@
   vertical-align: top;
   line-height: 12px;
 }
+.addressListTitle > i:hover{
+  color: #C69C6D;
+}
 .addressListTitle .city{
   font-weight: bold;
   padding-right: 8px;
@@ -69,6 +73,10 @@
   background-image: linear-gradient(to top,#e7e7e7,#fefefe);
   border: 1px solid #ccc;
   cursor: pointer;
+  border-radius: 3px;
+}
+.newAddress:hover{
+  background-image: linear-gradient(to top,#ccc,#fefefe);
 }
 .showAllAddress{
   height: 25px;
@@ -88,21 +96,34 @@
   cursor: pointer;
   color: #c69c6d;
 }
+.subOrder > a{
+  color: #333;
+}
+.subOrder > a:hover{
+  color: #C69C6D;
+}
 .subOrder > button{
   background-color: #c69c6d;
   border: none;
   border-radius: 2px;
   color: #fff;
 }
+.subOrder > button:hover{
+  background-image: linear-gradient(to top,#c69c6d, #dab07d);
+}
 
 /*模态框上的样式*/
+.addAddressCon{
+  color: #333;
+}
 .addAddressCon i{
-  display: inline-block;
-  width: 150px;
-  height: 30px;
+  float: left;
+  width: 145px;
+  height: 28px;
   line-height: 30px;
   text-align: right;
-  font-size: 16px;
+  font-size: 14px;
+  padding-right: 5px;
 }
 .addAddressCon div.cpcd{
   padding-left: 123px;
@@ -112,21 +133,44 @@
 }
 .addAddressCon .submit{
   margin-left: 150px;
+  width: 60px;
+  height: 30px;
+  background-image: linear-gradient(to top,#ebebeb,#efefef);
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  color: #333;
+}
+.addAddressCon .submit:hover{
+  background-image: linear-gradient(to top,#ccc,#ededed);
 }
 .addAddressCon div{
   margin-bottom: 16px;
 }
-.addAddressCon label>input{
+.addAddressCon label>input,.addAddressCon label>textarea{
+  float: left;
   width: 300px;
   height: 24px;
   line-height: 30px;
   padding-left: 10px;
 }
 .addAddressCon label>textarea{
-  width: 300px;
+  float: left;
+  width: 314px;
+  line-height: 20px;
   height: 60px;
+  overflow: hidden;
+  padding-left: 0;
+  text-indent: 1.5em;
+  font-size: 12px;
+  font-family: "微软雅黑";
 }
+
 .addressDiv>label>i{
+  float: left;
   height: 60px;
   vertical-align: top;
+}
+
+.cpcd > div{
+  margin-left: 26px;
 }

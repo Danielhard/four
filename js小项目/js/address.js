@@ -40,6 +40,10 @@
             var json = JSON.parse(jsonData);
             if(json.code === 0){
               delAddress(target);
+
+              // 删除后判断地址个数若小于四个则将控制收货地址的显示和隐藏按钮不显示
+              var delAddressLen = addressList.querySelectorAll('li').length;
+              showAllAddress.style.display = delAddressLen <= 4 ? "none" : "block";
             }
           })
 
@@ -92,6 +96,10 @@
   // 显示模态框
   function showModelBox(){
     show(modelBox);
+    selectList('country');
+    selectList('province');
+    selectList('city');
+    selectList('district');
   }
 
 
@@ -103,6 +111,8 @@
       var data = json['data'];
       allAddress = data.length;
 
+      // 如果收货地址长度小于4那么收货地址的显示和隐藏按钮不显示
+     showAllAddress.style.display = allAddress <= 4 ? "none" : "block";
       // 添加之前先清空
       addressList.innerHTML = "";
       for(var i = 0; i < data.length; i++){

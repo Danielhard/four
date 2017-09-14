@@ -21,6 +21,7 @@ html,body{
   bottom: 0;
   right: 0;
   margin: auto;
+  color: #333;
 }
 .addAdressTitle{
   line-height: 35px;
@@ -34,9 +35,15 @@ html,body{
 }
 .addAdressTitle>h6{
   height: 35px;
+  font-size: 14px;
+  font-weight: bold;
 }
 .addAdressTitle>span{
-  height: 35px;
-  font-size: 8px;
-  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  margin-top: 9px;
+  background: url(../image/closePng.png) -32px -25px no-repeat;
+}
+.addAdressTitle>span:hover{
+  background-position: -48px -25px;
 }

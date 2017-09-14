@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="css/modelBox.css">
   <link rel="stylesheet" href="css/toast.css"/>
   <link rel="stylesheet" href="css/addresstoast.css"/>
+  <link rel="stylesheet" href="css/select.css">
 </head>
 <body>
 <!--header部分-->
@@ -184,77 +185,161 @@
   <div class="addAddressWrap">
     <div class="addAdressTitle clearfix">
       <h6 class="fl">创建地址</h6>
-      <span id="modelBoxClose" class="closeAddAddress fr">X</span>
+      <span id="modelBoxClose" class="closeAddAddress fr"></span>
     </div>
     <div class="addAddressCon">
       <form id="addAddressConForm">
-        <div>
+        <div class="clearfix">
 
           <!--consignee：收货人-->
           <label for="addUsername"><i>收货人姓名</i><input id="addUsername" name="consignee" type="text"></label>
         </div>
-        <div class="cpcd">
-          <label for="country">国家
-            <select name="country" id="country">
-              <option value="中国大陆">中国大陆</option>
-              <option value="港澳">港澳</option>
-              <option value="台湾">台湾</option>
-              <option value="马来西亚">马来西亚</option>
-              <option value="海外其他">海外其他</option>
-            </select>
-          </label>
-          <label for="province">省份
-            <select name="province" id="province">
-              <option value="中国大陆">中国大陆</option>
-              <option value="港澳">港澳</option>
-              <option value="台湾">台湾</option>
-              <option value="马来西亚">马来西亚</option>
-              <option value="海外其他">海外其他</option>
-            </select>
-          </label>
-          <label for="city">城市
-            <select name="city" id="city">
-              <option value="中国大陆">中国大陆</option>
-              <option value="港澳">港澳</option>
-              <option value="台湾">台湾</option>
-              <option value="马来西亚">马来西亚</option>
-              <option value="海外其他">海外其他</option>
-            </select>
-          </label>
-          <label for="district">区域
-            <select name="district" id="district">
-              <option value="中国大陆">中国大陆</option>
-              <option value="港澳">港澳</option>
-              <option value="台湾">台湾</option>
-              <option value="马来西亚">马来西亚</option>
-              <option value="海外其他">海外其他</option>
-            </select>
-          </label>
+        <div class="cpcd clearfix">
+
+          <div id="country" class="country hobby">
+            <span class="val">国家</span>
+            <ul>
+              <li>中国大陆</li>
+              <li>港澳</li>
+              <li>台湾</li>
+              <li>马来西亚</li>
+              <li>海外其他</li>
+            </ul>
+          </div>
+          <select class="countrySelect hobby" name="country">
+            <!-- 这里面的这几项不能删除,如果删除的话,select在进行表单提交的时候回提交不上去，其实select在表单提交的时候
+             提交的是option中的值-->
+            <option value="中国大陆">中国大陆</option>
+            <option value="港澳">港澳</option>
+            <option value="台湾">台湾</option>
+            <option value="马来西亚">马来西亚</option>
+            <option value="海外其他">海外其他</option>
+          </select>
+          <!--<label for="country">国家-->
+            <!--<select name="country" id="country">-->
+              <!--<option value="中国大陆">中国大陆</option>-->
+              <!--<option value="港澳">港澳</option>-->
+              <!--<option value="台湾">台湾</option>-->
+              <!--<option value="马来西亚">马来西亚</option>-->
+              <!--<option value="海外其他">海外其他</option>-->
+            <!--</select>-->
+          <!--</label>-->
+
+          <div id="province" class="province hobby">
+            <span class="val">省份</span>
+            <ul>
+              <li>中国大陆</li>
+              <li>港澳</li>
+              <li>台湾</li>
+              <li>马来西亚</li>
+              <li>海外其他</li>
+            </ul>
+          </div>
+          <select class="provinceSelect hobby" name="province">
+            <!-- 这里面的这几项不能删除,如果删除的话,select在进行表单提交的时候回提交不上去，其实select在表单提交的时候
+             提交的是option中的值-->
+            <option value="中国大陆">中国大陆</option>
+            <option value="港澳">港澳</option>
+            <option value="台湾">台湾</option>
+            <option value="马来西亚">马来西亚</option>
+            <option value="海外其他">海外其他</option>
+          </select>
+
+          <!--<label for="province">省份-->
+            <!--<select name="province" id="province">-->
+              <!--<option value="中国大陆">中国大陆</option>-->
+              <!--<option value="港澳">港澳</option>-->
+              <!--<option value="台湾">台湾</option>-->
+              <!--<option value="马来西亚">马来西亚</option>-->
+              <!--<option value="海外其他">海外其他</option>-->
+            <!--</select>-->
+          <!--</label>-->
+
+
+          <div id="city" class="city hobby">
+            <span class="val">城市</span>
+            <ul>
+              <li>中国大陆</li>
+              <li>港澳</li>
+              <li>台湾</li>
+              <li>马来西亚</li>
+              <li>海外其他</li>
+            </ul>
+          </div>
+          <select class="citySelect hobby" name="city">
+            <!-- 这里面的这几项不能删除,如果删除的话,select在进行表单提交的时候回提交不上去，其实select在表单提交的时候
+             提交的是option中的值-->
+            <option value="中国大陆">中国大陆</option>
+            <option value="港澳">港澳</option>
+            <option value="台湾">台湾</option>
+            <option value="马来西亚">马来西亚</option>
+            <option value="海外其他">海外其他</option>
+          </select>
+
+          <!--<label for="city">城市-->
+            <!--<select name="city" id="city">-->
+              <!--<option value="中国大陆">中国大陆</option>-->
+              <!--<option value="港澳">港澳</option>-->
+              <!--<option value="台湾">台湾</option>-->
+              <!--<option value="马来西亚">马来西亚</option>-->
+              <!--<option value="海外其他">海外其他</option>-->
+            <!--</select>-->
+          <!--</label>-->
+
+          <div id="district" class="district hobby">
+            <span class="val">区域</span>
+            <ul>
+              <li>中国大陆</li>
+              <li>港澳</li>
+              <li>台湾</li>
+              <li>马来西亚</li>
+              <li>海外其他</li>
+            </ul>
+          </div>
+          <select class="districtSelect hobby" name="district">
+            <!-- 这里面的这几项不能删除,如果删除的话,select在进行表单提交的时候回提交不上去，其实select在表单提交的时候
+             提交的是option中的值-->
+            <option value="中国大陆">中国大陆</option>
+            <option value="港澳">港澳</option>
+            <option value="台湾">台湾</option>
+            <option value="马来西亚">马来西亚</option>
+            <option value="海外其他">海外其他</option>
+          </select>
+
+          <!--<label for="district">区域-->
+            <!--<select name="district" id="district">-->
+              <!--<option value="中国大陆">中国大陆</option>-->
+              <!--<option value="港澳">港澳</option>-->
+              <!--<option value="台湾">台湾</option>-->
+              <!--<option value="马来西亚">马来西亚</option>-->
+              <!--<option value="海外其他">海外其他</option>-->
+            <!--</select>-->
+          <!--</label>-->
         </div>
-        <div class="addressDiv">
+        <div class="addressDiv clearfix">
           <label for="address"><i>收货地址</i>
             <textarea name="address" id="address"></textarea>
           </label>
         </div>
-        <div class="address_name"><label for="address_name"><i>地址位置</i>
+        <div class="address_name clearfix"><label for="address_name"><i>地址位置</i>
           <input id="address_name" name="address_name" type="text">
         </label></div>
-        <div>
+        <div class="clearfix">
           <label for="sign_building"><i>标志性建筑</i><input id="sign_building" name="sign_building" type="text"></label>
         </div>
-        <div>
+        <div class="clearfix">
           <label for="zipcode"><i>邮编</i><input id="zipcode" name="zipcode" type="text"></label>
         </div>
-        <div>
+        <div class="clearfix">
           <label for="tel"><i>电话号码</i><input id="tel" name="tel" type="text"></label>
         </div>
-        <div>
+        <div class="clearfix">
           <label for="mobile"><i>手机号</i><input id="mobile" name="mobile" type="text"></label>
         </div>
-        <div>
+        <div class="clearfix">
           <label for="email"><i>邮箱</i><input id="email" name="email" type="text"></label>
         </div>
-        <div>
+        <div class="clearfix">
           <label for="best_time"><i>最佳送货时间</i><input id="best_time" name="best_time" type="text"></label>
         </div>
         <input id="subAddress" class="submit" type="submit" value="保存">
@@ -268,6 +353,7 @@
 <script type="text/javascript" src="js/animateFrame03版.js"></script>
 <script type="text/javascript" src="js/myajax.js"></script>
 <script type="text/javascript" src="js/index-login.js"></script>
+<script type="text/javascript" src="js/select.js"></script>
 <script type="text/javascript" src="js/address.js"></script>
 <script type="text/javascript" src="js/modelBox.js"></script>
 </body>
