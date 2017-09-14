@@ -42,8 +42,6 @@
               delAddress(target);
 
               // 删除后判断地址个数若小于四个则将控制收货地址的显示和隐藏按钮不显示
-              var delAddressLen = addressList.querySelectorAll('li').length;
-              showAllAddress.style.display = delAddressLen <= 4 ? "none" : "block";
             }
           })
 
@@ -59,11 +57,13 @@
     if(this.innerText === "显示所有地址"){
       animate(addressList,{height:oLiHeight * addressCount},300,'Quad.easeOut',function(){
         flag = !flag;
+        showHidden();
         controlTxt();
       });
     } else{
       animate(addressList,{height:oLiHeight},300,'Quad.easeOut',function(){
         flag = !flag;
+        showHidden();
         controlTxt();
       });
     }
@@ -83,6 +83,7 @@
   // 删除地址
   function delAddress(target){
     addressList.removeChild(target);
+    showHidden();
   }
 
   // 控制文本
@@ -100,6 +101,15 @@
     selectList('province');
     selectList('city');
     selectList('district');
+  }
+
+  function showHidden(){
+    var delAddressLen = addressList.querySelectorAll('li').length;
+    if(delAddressLen<= 4 && addressList.offsetHeight ===oLiHeight){
+      showAllAddress.style.display = "none";
+    }else{
+      showAllAddress.style.display = "block";
+    }
   }
 
 
@@ -132,6 +142,7 @@
       }
     })
   }
+  showHidden();
   showAddress();
 
   // 添加收货地址的ajax
@@ -146,6 +157,7 @@
           var json = JSON.parse(jsonData);
           if(json.code === 0){
             showAddress();
+            showHidden();
           }
         }
     )
