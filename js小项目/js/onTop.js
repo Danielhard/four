@@ -1,20 +1,12 @@
-var mainNav =document.querySelector('#main-nav');
-var topDis = getAllTop(mainNav);
-window.addEventListener('scroll',function(e) {
+var mainNav =document.querySelector('div[data-name=searchOnTop]');
+window.addEventListener('scroll',function() {
   var nowTop = document.documentElement.scrollTop || document.body.scrollTop;
-  if(nowTop >= topDis) {
+  if(nowTop >= 64) {
+  	mainNav.style.display = 'block';
     mainNav.style.position = 'fixed';
-    mainNav.style.marginTop = 0;
+    mainNav.style.marginTop = '-'+ 141 + 'px';
   }else {
-    mainNav.style.position = 'relative';
-    mainNav.style.marginTop = topDis + 'px';
+  	mainNav.style.display = 'none';
+    mainNav.style.marginTop = 2 + 'px';
   }
-}
-) 
-function getAllTop(obj) {
-  var allTop = obj.offsetTop;
-  while(obj = obj.offsetParent) {
-    allTop += obj.offsetTop;
-  }
-  return allTop;
-}
+}) 

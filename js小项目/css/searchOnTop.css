@@ -1,0 +1,27 @@
+#searchOnTop{
+	width: 100%;
+	height: 50px;
+  margin: auto;
+  background: #fff;
+  z-index: 600;
+  display: none;
+}
+#ontop-box{
+	width: 390px;
+  background: #c69c6d;
+  float: right;
+  margin-right: 300px;
+  margin-top: 7px;
+}
+#ontop-box > div {
+	border: 2px solid #c69c6d;
+  font-size: 15px;
+  width: 388px;
+  height: 34px;
+}
+.top-logoPic img,.top-logoDesPic img{
+	width: 180px;
+	height: 50px;
+	float: left;
+	margin-right: 40px;
+}
