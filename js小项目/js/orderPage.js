@@ -55,6 +55,7 @@ myajax.get('http://h6.duchengjiu.top/shop/api_order.php', {token: localStorage.t
   
 		var oOrder = document.querySelectorAll('span[name=order]');
 		var oTablebox = document.querySelector('table');
+		console.log(oOrder);
 		for(var i = 0 ; i < oOrder.length;i ++){
 			  oOrder[i].index = i;
 				oOrder[i].onclick = function(event) {
@@ -62,20 +63,35 @@ myajax.get('http://h6.duchengjiu.top/shop/api_order.php', {token: localStorage.t
 			  var self=this;
 			  var target = event.target || event.srcElement;
 			  if (target.className === 'cancel-order') {
-			    if (!confirm('确认要取消订单吗?')) {
-			      return;
-			    }
-			    var order_id = target.dataset.id;
-			    myajax.post('http://h6.duchengjiu.top/shop/api_order.php?token='+localStorage.token+'&status=cancel', {order_id}, function(err, responseText) {
-			      var json = JSON.parse(responseText);
-			      if (json.code === 0) {
-//			        alert('订单删除成功！');
-								toast("订单取消成功!",3000);
-			        oOrder[self.index].parentNode.parentNode.parentNode.parentNode.parentNode.removeChild(oOrder[self.index].parentNode.parentNode.parentNode.parentNode);			      
-			      }
-			    });
-			  }
+//			    if (!confirm('确认要取消订单吗?')) {
+//			      return;
+//			    }
+//			    var order_id = target.dataset.id;
+//			    myajax.post('http://h6.duchengjiu.top/shop/api_order.php?token='+localStorage.token+'&status=cancel', {order_id}, function(err, responseText) {
+//			      var json = JSON.parse(responseText);
+//			      if (json.code === 0) {
+////			        alert('订单删除成功！');
+//								toast("订单取消成功!",3000);
+//			        oOrder[self.index].parentNode.parentNode.parentNode.parentNode.parentNode.removeChild(oOrder[self.index].parentNode.parentNode.parentNode.parentNode);			      
+//			      }
+//			    });
+//			  }
+//			}
+//		}
+//	})
+//})()
+				var order_id = target.dataset.id;
+				myajax.post('http://h6.duchengjiu.top/shop/api_order.php?token='+localStorage.token+'&status=cancel', {order_id}, function(err, responseText) {
+		      confirm('确认要取消订单吗？', function(){
+//		        console.log('删除成功');
+						toast("订单取消成功!",2000);
+	        	oOrder[self.index].parentNode.parentNode.parentNode.parentNode.parentNode.removeChild(oOrder[self.index].parentNode.parentNode.parentNode.parentNode);
+	      		}, function(){
+	       			console.log('取消删除');
+      			});
+					})
+			 	}
 			}
 		}
-	});
+	})
 })()

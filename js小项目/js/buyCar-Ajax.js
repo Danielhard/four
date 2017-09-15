@@ -3,7 +3,6 @@
     var oBcProListCon=document.querySelector("#bcProListCon");
     var delAll=document.querySelector(".delAll");
     var token=matchQueryString("token");
-    var Account=document.querySelector(".account");
      myajax.get("http://h6.duchengjiu.top/shop/api_cart.php",{token: localStorage.token,},function(error,responseText){
         var json=JSON.parse(responseText);
         console.log(json);
@@ -31,22 +30,22 @@
         </div>
       </div>
             `;
-            changeTotalAmount();
+       
         }
-     });
-    Account.addEventListener("mouseover",function () {
-       this.style.backgroundColor="#a4a1a1";
-    });
-    Account.addEventListener("mouseout",function () {
-        this.style.backgroundColor="#b0b0b0";
-    })
-    oBcProListCon.addEventListener("click",function (event) {
+         oBcProListCon.addEventListener("click",function (event) {
         event=event||window.event;
         var target=event.target||event.srcElement;
-        if(target.name==="delete"){
-           if(!confirm("确认删除？")){
-               return;
-           }
+//      if(target.name==="delete"){
+//         if(!confirm("确认删除？")){
+//             return;
+
+//         }
+						confirm('确认要删除吗？', function(){
+						toast("删除成功!",2000);
+				 		}, function(){
+	       			console.log('取消删除');
+      		  	}
+				 		);
          var goods_id=target.dataset.id;
          var number=0;
            myajax.post("http://h6.duchengjiu.top/shop/api_cart.php?token="+localStorage.token,
@@ -57,14 +56,15 @@
                   var delDiv=target.parentNode.parentNode;
                   delDiv.parentNode.removeChild(delDiv);
                 }
-           })
-        }
+           });
+           
+//      }
    });
-    delAll.addEventListener("click",function () {
-       if(!confirm("确定清空整个购物车吗？")){
-           return;
-       }
-        var oGoodsDiv=document.querySelectorAll(".colorAndStyle");
+        
+      delAll.addEventListener("click",function () {
+
+      confirm("确定清空整个购物车吗？",function(){
+      	    var oGoodsDiv=document.querySelectorAll(".colorAndStyle");
        for (var i=0;i<oGoodsDiv.length;i++){
            var branch=oGoodsDiv[i];
            var goods_id=parseInt(branch.innerText);
@@ -88,6 +88,98 @@
        }
       sumPrice.innerText = 0;
     });
+      	
+      },function(){
+      	  return;
+      
+      })
+      
+
+//      var oGoodsDiv=document.querySelectorAll(".colorAndStyle");
+//     for (var i=0;i<oGoodsDiv.length;i++){
+//         var branch=oGoodsDiv[i];
+//         var goods_id=parseInt(branch.innerText);
+//         var number=0;
+//         (function (branch) {
+//             myajax.post("http://h6.duchengjiu.top/shop/api_cart.php?token="+localStorage.token,
+//                 {goods_id,number},function (error,responseText) {
+//                     var json=JSON.parse(responseText);
+//                     console.log(json);
+//                     if(json.code===0){
+//                         var father=branch.parentNode;
+//                         father.parentNode.removeChild(father);
+//                     }
+//                 })
+//         })(branch)
+//     }
+//
+//      // 移除全部商品
+//     for(var i = oGoodsDiv - 1; i >= 0; i--){
+//         oGoodsDiv[i].parentNode.removeChild(oGoodsDiv[i]);
+//     }
+//    sumPrice.innerText = 0;
+//  });
+
+             changeTotalAmount();
+     });
+//  oBcProListCon.addEventListener("click",function (event) {
+//      event=event||window.event;
+//      var target=event.target||event.srcElement;
+////      if(target.name==="delete"){
+////         if(!confirm("确认删除？")){
+////             return;
+//
+////         }
+//						confirm('确认要删除吗？', function(){
+//						toast("删除成功!",2000);
+//				 		}, function(){
+//	       			console.log('取消删除');
+//    		  	}
+//				 		);
+//       var goods_id=target.dataset.id;
+//       var number=0;
+//         myajax.post("http://h6.duchengjiu.top/shop/api_cart.php?token="+localStorage.token,
+//             {goods_id,number},function (error,responseText) {
+//              var json=JSON.parse(responseText);
+//              console.log(json);
+//              if(json.code===0){
+//                var delDiv=target.parentNode.parentNode;
+//                delDiv.parentNode.removeChild(delDiv);
+//              }
+//         });
+//         
+////      }
+// });
+//  delAll.addEventListener("click",function () {
+//
+//    if(!confirm("确定清空整个购物车吗？")){
+//      return;
+//    }
+//
+//      var oGoodsDiv=document.querySelectorAll(".colorAndStyle");
+//     for (var i=0;i<oGoodsDiv.length;i++){
+//         var branch=oGoodsDiv[i];
+//         var goods_id=parseInt(branch.innerText);
+//         var number=0;
+//         (function (branch) {
+//             myajax.post("http://h6.duchengjiu.top/shop/api_cart.php?token="+localStorage.token,
+//                 {goods_id,number},function (error,responseText) {
+//                     var json=JSON.parse(responseText);
+//                     console.log(json);
+//                     if(json.code===0){
+//                         var father=branch.parentNode;
+//                         father.parentNode.removeChild(father);
+//                     }
+//                 })
+//         })(branch)
+//     }
+//
+//      // 移除全部商品
+//     for(var i = oGoodsDiv - 1; i >= 0; i--){
+//         oGoodsDiv[i].parentNode.removeChild(oGoodsDiv[i]);
+//     }
+//    sumPrice.innerText = 0;
+//  });
 
     function changeTotalAmount(){
         var sum = 0;
