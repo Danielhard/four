@@ -39,10 +39,15 @@
   margin-top: 10px;
 }
 .productDetailRight>.price{
+  height: 20px;
   font-size: 20px;
   font-weight: bold;
   color: #c8a985;
   margin-top: 20px;
+}
+.count{
+  margin: 10px 0;
+  float: none;
 }
 .productDetailRight .buy{
   margin-top: 20px;
@@ -68,6 +73,7 @@
     left: 480px;
     background-size: 960px 960px;
     display: none;
+    z-index: 10;
 }
 .zoom{
     position: absolute;

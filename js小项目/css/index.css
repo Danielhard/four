@@ -117,13 +117,12 @@
 }
 .search-history{
 	width: 300px;
-  height: 80px;
+  height: 300px;
   z-index: 10;
   color: grey;
   position: absolute;
   background: #fff;
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow: hidden;
   padding-left: 3px;
   display: none;
 }
@@ -133,6 +132,11 @@
 	height: 30px;
 	margin-bottom: 3px;
 	line-height: 30px;
+}
+.search-history ul li a{
+	width: 297px;
+	height: 30px;
+	display: block;
 }
 .search-history ul li:hover{
 	background: #EDCC61;

@@ -84,10 +84,13 @@
         lock = true;
       }, 10000);
       for (var i=0;i<str.length;i++) {
-        var oLiSearch = document.createElement('li');
-        oLiSearch.innerText = str[i];
-        oSearchUlHistory.insertBefore(oLiSearch,oSearchUlHistory.children[0]);
-      }
+  			var oLiSearch = document.createElement('li');
+  			var oSearchA = document.createElement('a');
+  			oSearchA.innerText = str[i];
+  			oSearchA.href = "goodsSearch.html?search_text=" + oSearchA.innerText;
+				oSearchUlHistory.insertBefore(oLiSearch,oSearchUlHistory.children[0]);
+  			oLiSearch.appendChild(oSearchA);
+  		}
     }
   }
   if(localStorage.value){
@@ -100,9 +103,12 @@
       oSearchDiv.style.display = 'block';
     }
   }
-  oGoodsSearch.onblur = function(){
-    oSearchDiv.style.display = 'none';
-  }
+  oSearchDiv.onmouseleave = function(){
+    	oSearchDiv.style.display = 'none';
+    }
+    window.onclick = function(){
+    	oSearchDiv.style.display = 'none';
+    }
 
   //吸顶的搜索框
   var oGoodsSearch1 = document.querySelector('input[name=searchBtn]');

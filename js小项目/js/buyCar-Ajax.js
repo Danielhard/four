@@ -24,7 +24,7 @@
             <i class="countLeft isCount">-</i><input class="countCon" value="${obj.goods_number}"/><i class="countRight isCount">+</i>
           </strong>
         </div>
-        <div class="singleSum fl gold">&yen;<span class="singleSumSpan">${obj.goods_price}</span></div>
+        <div class="singleSum fl gold">&yen;<span class="singleSumSpan">${obj.goods_price*obj.goods_number}</span></div>
         <div class="operation fl">
           <a class="operationDel" data-id="${obj.goods_id}" name="delete" href="javascript:(0)">删除</a>
         </div>
