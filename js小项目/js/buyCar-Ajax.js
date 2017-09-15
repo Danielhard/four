@@ -41,7 +41,7 @@
             confirm('确认要删除吗？', function() {
                   toast('删除成功!', 2000);
                   deletePro(target);
-                  changeTotalAmount();
+                  //location.reload();
                 }, function() {
                   console.log('取消删除');
                 },
@@ -60,7 +60,10 @@
                 if (json.code === 0) {
                   var delDiv = target.parentNode.parentNode;
                   delDiv.parentNode.removeChild(delDiv);
+                }else{
+                  alert("删除失败");
                 }
+                changeTotalAmount();
               });
         }
 
