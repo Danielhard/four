@@ -11,7 +11,8 @@
 		      <div class="productDetailImgB"> 
 		        <div class="zoom"></div>
 		      	<img src="${obj.goods_thumb}" alt="">
-		      	</div>
+		      	<div class="mark"></div>
+		     </div>
 		      <div class="productDetailImgS">
 		        <img src="${obj.goods_thumb}" alt="">
 		      </div>

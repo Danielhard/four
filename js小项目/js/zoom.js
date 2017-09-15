@@ -3,21 +3,35 @@ function Zoom() {
     var oSmallPic = document.querySelector('.productDetailImgB');
     var oZoom = document.querySelector('.zoom');
     var oProductDetailLeft=document.querySelector(".productDetailLeft");
-
-    var bigPicWidth = parseFloat(fetchComputedStyle(oBigPic, 'width'));
+    var oMark=document.querySelector(".mark");
+    var bigPicWidth = 480;
     var smallPicWidth = parseFloat(fetchComputedStyle(oSmallPic, 'width'));
     var zoomWidth = parseFloat(fetchComputedStyle(oZoom, 'width'));
     var rate = (960 - bigPicWidth) / (smallPicWidth - zoomWidth);
 
-    oSmallPic.onmouseover = function () {
-        oZoom.style.display = 'block';
-        oBigPic.style.display = 'block';
-        this.style.backgroundColor="rgba("+255+","+255+","+255+","+0.3+")";
+    oSmallPic.onmouseenter = function (event) {
+        var event=event||window.event;
+        var currentTarget=event.currentTarget;
+        if(currentTarget.className==="productDetailImgB"){
+            oZoom.style.display = 'block';
+            oBigPic.style.display = 'block';
+            oBigPic.style.zIndex=5;
+            oMark.style.backgroundColor="rgba("+255+","+255+","+255+","+0.7+")";
+            animate(oBigPic,{"width":480,"height":480,"top":0,"left":500},500,"Cubic.easeOut",function () {
+          })
+        }
     }
-    oSmallPic.onmouseout = function () {
-        oZoom.style.display = 'none';
-        oBigPic.style.display = 'none';
-        this.style.opacity=1;
+    oSmallPic.onmouseout = function (event) {
+        var event=event||window.event;
+        var currentTarget=event.currentTarget;
+        if(currentTarget.className==="productDetailImgB"){
+         oZoom.style.display = 'none';
+         animate(oBigPic,{"width":50,"height":50,"top":240,"left":240},500,"Cubic.easeIn",function () {
+             oMark.style.backgroundColor="rgba("+255+","+255+","+255+","+0+")";
+             oBigPic.style.display = 'none';
+             oBigPic.style.zIndex=1;
+            })
+        }
     }
     oSmallPic.onmousemove = function (event) {
         event = event || window.event;
