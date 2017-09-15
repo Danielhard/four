@@ -12,7 +12,7 @@
       changeCount(target);
       changeMoney(target);
     } else if(target.classList.contains('operationDel')){
-      deletePro(target);
+      //deletePro(target);
     }
     changeTotalAmount();
   },false);

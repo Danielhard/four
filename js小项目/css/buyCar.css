@@ -89,7 +89,7 @@
   -ms-user-select: none;
   user-select: none;
 }
-.count>span>i{
+.count>strong>i{
   display: inline-block;
   width: 20px;
   height: 20px;
@@ -97,10 +97,10 @@
   text-align: center;
   cursor: pointer;
 }
-.count>span>.countRight{
+.count>strong>.countRight{
   margin-left: -1px;
 }
-.count>span>.countCon{
+.count>strong>.countCon{
   position: relative;
   width: 40px;
   height: 20px;
@@ -150,6 +150,9 @@
   font-size: 20px;
   cursor: pointer;
   text-align: center;
+}
+.totalAmountLeft>a:hover{
+  background-image: linear-gradient(to top, #bcbcbc, #cfcfcf);
 }
 .sumPrice{
   font-size: 20px;
