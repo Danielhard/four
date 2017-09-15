@@ -6,7 +6,6 @@
     event = event || window.event;
     if(!localStorage.token){
       event.preventDefault();
-      toast("请先登录",3000);
       location.href='login.html';
     } else {
       location.href='buyCar.html';
@@ -20,7 +19,6 @@
         var target = event.target || event.srcElement;
         if(!localStorage.token){
           event.preventDefault();
-          toast("请先登录",3000);
           location.href='login.html';
         }else{
           if(target.innerText === '我的订单'){
