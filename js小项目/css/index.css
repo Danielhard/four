@@ -220,6 +220,10 @@
   color: white;
 }
 .main-nav .proList>li{
+
+  /*等会来改*/
+  width: 82px;
+
   float: left;
   line-height: 38px;
 }
