@@ -59,7 +59,7 @@
                   var delDiv = target.parentNode.parentNode;
                   delDiv.parentNode.removeChild(delDiv);
                 }else{
-                  alert("删除失败");
+                 location.reload();
                 }
                 changeTotalAmount();
               });

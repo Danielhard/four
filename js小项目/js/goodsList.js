@@ -168,7 +168,8 @@
     }
 
     if (data.length === 0) {
-      oMainProList.innerHTML = `<p><a href="../index.html">商品数据为空,点击此处返回首页</a></p>`;
+    	console.log(location.href); 
+      oMainProList.innerHTML = `<p><a href="index.html">商品数据为空,点击此处返回首页</a></p>`;
     }
 
     animate(document, {scrollTop: 0}, 600, 'Quad.easeOut');
