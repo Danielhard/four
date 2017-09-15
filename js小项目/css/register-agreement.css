@@ -1,0 +1,9 @@
+#agreement{
+	float: left;
+  margin-left: 30px;
+  margin-top: 3px;
+  margin-right: 5px;
+}
+#agreement label a {
+	color: #333;
+}
