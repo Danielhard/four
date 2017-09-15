@@ -1,6 +1,5 @@
 (function() {
   var oProList = document.querySelector('#proList');
-  console.log(oProList);
   var oMainProList = document.querySelector('.mainProList');
   var allNavLi = oProList.querySelectorAll('#proList>li');
 
@@ -12,7 +11,6 @@
         for (var i = 0; i < data.length; i++) {
           var obj = data[i];
 
-          console.log(allNavLi);
           allNavLi[i].dataset.index = i;
           allNavLi[i].querySelector('a').href="goodsList.html?cat_id=" + obj['cat_id'];
           allNavLi[i].querySelector('a').innerText= obj['cat_name'];

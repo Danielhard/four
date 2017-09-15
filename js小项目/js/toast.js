@@ -9,7 +9,6 @@ function toast(content, delay) {
   oDiv.style.marginTop = - parseInt(fetchComputedStyle(oDiv, 'height')) / 2 + 'px';
   var timer = setInterval(function(){
     document.body.removeChild(oDiv);
-    console.log(1);
     clearInterval(timer);
   }, delay);
 }

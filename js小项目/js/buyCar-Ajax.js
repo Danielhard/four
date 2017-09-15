@@ -6,7 +6,6 @@
   myajax.get('http://h6.duchengjiu.top/shop/api_cart.php',
       {token: localStorage.token,}, function(error, responseText) {
         var json = JSON.parse(responseText);
-        console.log(json);
         var data = json.data;
         for (var i = 0; i < data.length; i++) {
           var obj = data[i];
@@ -56,7 +55,6 @@
               localStorage.token,
               {goods_id, number}, function(error, responseText) {
                 var json = JSON.parse(responseText);
-                console.log(json);
                 if (json.code === 0) {
                   var delDiv = target.parentNode.parentNode;
                   delDiv.parentNode.removeChild(delDiv);
