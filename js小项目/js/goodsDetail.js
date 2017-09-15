@@ -8,13 +8,13 @@
 				var json = JSON.parse(responseText);
 				var obj = json.data[0];
 				oDiv.innerHTML = `<div class="productDetailLeft" name="bigo">
-		      <div class="productDetailImgB">
+		      <div class="productDetailImgB"> 
+		        <div class="zoom"></div>
 		      	<img src="${obj.goods_thumb}" alt="">
 		      	</div>
 		      <div class="productDetailImgS">
 		        <img src="${obj.goods_thumb}" alt="">
 		      </div>
-		         <div class="zoom"></div>
 		         <div class="bigPic"></div>
 		    </div>
 		    <div class="productDetailRight">
@@ -29,6 +29,20 @@
         var oBigPic=document.querySelector(".bigPic");
         oBigPic.style.backgroundImage="url("+obj.goods_thumb+")";
         oBigPic.style.backgroundRepeat="no-repeat";
+        var oBuyNow=document.querySelector("#buyNow");
+        var oAddCar=document.querySelector("#addCar");
+        oBuyNow.addEventListener("mouseover",function () {
+			this.style.backgroundColor="#b69a79";
+        });
+        oAddCar.addEventListener("mouseover",function () {
+            this.style.backgroundColor="#b69a79";
+        });
+        oBuyNow.addEventListener("mouseout",function () {
+           this.style.backgroundColor="#c8a985";
+        });
+        oAddCar.addEventListener("mouseout",function(){
+            this.style.backgroundColor="#c8a985";
+		})
 		var oSpanAddCar = document.querySelector('span[data-name=addCar]');
 		oSpanAddCar.onclick = function(){
 	    	event = event || window.event;

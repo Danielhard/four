@@ -11,6 +11,7 @@
     var oFoot=document.querySelector("#foot");
     var lock=true;var lock2=true;var lock3=true;var lock4=true;var lock5=true;var lock6=true;var lock7=true;
     var lock8=true;
+
      //热门
      myajax.get("http://h6.duchengjiu.top/shop/api_goods.php",{
         "pagesize":8
@@ -37,8 +38,6 @@
               `;
         }
     });
-
-
      window.onscroll=function () {
          var windowHeight=document.body.scrollTop||document.documentElement.scrollTop;
          if(windowHeight>getAllTop(oHot)) {

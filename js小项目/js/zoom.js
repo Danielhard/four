@@ -3,37 +3,23 @@ function Zoom() {
     var oSmallPic = document.querySelector('.productDetailImgB');
     var oZoom = document.querySelector('.zoom');
     var oProductDetailLeft=document.querySelector(".productDetailLeft");
-    // console.log(oBigPic);
-    // console.log(oSmallPic);
-    // console.log(oZoom);
-    // console.log(oProductDetailLeft);
+
     var bigPicWidth = parseFloat(fetchComputedStyle(oBigPic, 'width'));
     var smallPicWidth = parseFloat(fetchComputedStyle(oSmallPic, 'width'));
     var zoomWidth = parseFloat(fetchComputedStyle(oZoom, 'width'));
     var rate = (960 - bigPicWidth) / (smallPicWidth - zoomWidth);
 
-    oProductDetailLeft.onmouseover = function (event) {
-        event=event||window.event;
-        var currentTarget = event.currentTarget;
-        if(currentTarget.className==="productDetailLeft"){
-            oZoom.style.display = 'block';
-            oBigPic.style.display = 'block';
-
-        }
-      }
-        oProductDetailLeft.onmouseout = function (event) {
-        event=event||window.event;
-        var currentTarget = event.currentTarget;
-        if(currentTarget.className==="productDetailLeft"){
-
-            oZoom.style.display = 'none';
-
-            oBigPic.style.display = 'none';
-
-         }
-      }
-        oProductDetailLeft.onmousemove = function (event) {
-        console.log(1);
+    oSmallPic.onmouseover = function () {
+        oZoom.style.display = 'block';
+        oBigPic.style.display = 'block';
+        this.style.backgroundColor="rgba("+255+","+255+","+255+","+0.3+")";
+    }
+    oSmallPic.onmouseout = function () {
+        oZoom.style.display = 'none';
+        oBigPic.style.display = 'none';
+        this.style.opacity=1;
+    }
+    oSmallPic.onmousemove = function (event) {
         event = event || window.event;
         var scrollLeft = document.body.scrollLeft || document.documentElement.scrollLeft;
         var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;

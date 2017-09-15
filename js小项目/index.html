@@ -11,13 +11,14 @@
   <link rel="stylesheet" href="css/selectedCard.css">
   <link rel="stylesheet" type="text/css" href="css/backtotop.css"/>
   <link rel="stylesheet" type="text/css" href="css/icon-wrap.css"/>
+  <link rel="stylesheet" type="text/css" href="css/searchOnTop.css"/>
   <style>
     body{
       height: 9000px;
     }
     .username,.logout{
-			display: none;
-		}
+	  display: none;
+	}
   </style>
 </head>
 <body>
@@ -60,6 +61,10 @@
           <input class="searchInput" type="text" name="search_text" placeholder="唇部彩妆">
           <input class="searchBtn" type="button" name="searchBtn" value="搜索">
         </div>
+        <div class="search-history" style="border-top: 0;">
+	      	<ul id="searchulhistory">
+	      	</ul>
+      	</div>
         <ul class="hotSearchList">
           <li><a href="#">太阳镜</a></li>
           <li><a href="#">美妆</a></li>
@@ -77,6 +82,22 @@
     </div>
   </div>
 
+  
+  <div id="searchOnTop" data-name="searchOnTop">
+  	<div class="top-logoPic">
+      <img src="image/logo.jpg" alt="第五大道奢侈品网" title="第五大道奢侈品网">
+    </div>
+    <div class="top-logoDesPic">
+      <img src="image/yijian.jpg" alt="一键连接奢侈品网" title="一键连接奢侈品网">
+    </div>
+    <div id="ontop-box">
+      <div>
+        <input class="searchInput" type="text" name="search_text1" placeholder="唇部彩妆">
+        <input class="searchBtn fr" type="button" name="searchBtn1" value="搜索">
+      </div>
+    </div>
+  </div>
+  	
   <!--nav导航-->
   <nav id="main-nav" class="main-nav">
     <div class="w">
@@ -337,7 +358,7 @@
             家居
            </div>
            <div class="proTitleRight fr">
-            <a href="#">查看更多>></image></a>
+            <a href="goodsList.html?cat_id=45">查看更多>></image></a>
            </div>
           </div>
         <div class="proContain">
@@ -354,7 +375,7 @@
                   家具
               </div>
               <div class="proTitleRight fr">
-                  <a href="#">查看更多>></image></a>
+                  <a href="goodsList.html?cat_id=55">查看更多>></image></a>
               </div>
           </div>
           <div class="proContain">
@@ -373,7 +394,7 @@
                      文具
                  </div>
                  <div class="proTitleRight fr">
-                     <a href="#">查看更多>></image></a>
+                     <a href="goodsList.html?cat_id=62">查看更多>></image></a>
                  </div>
              </div>
              <div class="proContain">
@@ -389,7 +410,7 @@
                    数码
                </div>
                <div class="proTitleRight fr">
-                   <a href="#">查看更多>></image></a>
+                   <a href="goodsList.html?cat_id=69">查看更多>></image></a>
                </div>
            </div>
            <div class="proContain">
@@ -405,7 +426,7 @@
                   玩乐
                </div>
                <div class="proTitleRight fr">
-                   <a href="#">查看更多>></image></a>
+                   <a href="goodsList.html?cat_id=77">查看更多>></image></a>
                </div>
            </div>
            <div class="proContain">
@@ -421,7 +442,7 @@
                    厨卫
                </div>
                <div class="proTitleRight fr">
-                   <a href="#">查看更多>></image></a>
+                   <a href="goodsList.html?cat_id=82">查看更多>></image></a>
                </div>
            </div>
            <div class="proContain">
@@ -437,7 +458,7 @@
                    美食
                </div>
                <div class="proTitleRight fr">
-                   <a href="#">查看更多>></image></a>
+                   <a href="goodsList.html?cat_id=92">查看更多>></image></a>
                </div>
            </div>
            <div class="proContain">
@@ -454,7 +475,7 @@
                   童装
                </div>
                <div class="proTitleRight fr">
-                   <a href="#">查看更多>></image></a>
+                   <a href="goodsList.html?cat_id=125">查看更多>></image></a>
                </div>
            </div>
            <div class="proContain">
@@ -573,5 +594,7 @@
   <script type="text/javascript" src="js/mainShow.js"></script>
   <script type="text/javascript" src="js/goodsList.js"></script>
   <script type="text/javascript" src="js/index.js"></script>
+  <script type="text/javascript" src="js/onTop.js"></script>
+  <script type="text/javascript" src="js/goodsList-index.js"></script>
 </body>
 </html>

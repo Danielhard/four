@@ -1,3 +1,12 @@
+.mainProList>p{
+  text-align: center;
+}
+.mainProList>p>a{
+  color: #333;
+}
+.mainProList>p>a:hover{
+  color: #c8a985;
+}
 .proConList .proContain .mainProList{
   height: auto;
 }
