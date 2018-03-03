@@ -9,8 +9,7 @@
 }
 #ontop-box{
 	width: 390px;
-  float: right;
-  margin-right: 450px;
+  float: left;
 }
 #ontop-box > div {
 	border: 2px solid #c69c6d;
