@@ -1,5 +1,6 @@
 (function() {
   var oProList = document.querySelector('#proList');
+  console.log(oProList)
   var oMainProList = document.querySelector('.mainProList');
   var allNavLi = oProList.querySelectorAll('#proList>li');
 
@@ -21,7 +22,7 @@
 
 
         }
-        var navLi = document.querySelector('#proList').querySelectorAll('li');
+        var navLi = proList.querySelectorAll('li');
         if (localStorage.currentNav !== undefined) {
           changeClass(navLi, localStorage.currentNav, 'current');
         }

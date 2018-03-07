@@ -61,7 +61,6 @@
   }
 
 // 页面加载完就执行这个函数
-  changeMoney();
   changeTotalAmount();
 
 // 删除商品
