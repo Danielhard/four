@@ -1,7 +1,6 @@
 (function() {
   var oDiv = document.querySelector('div[data-name=detailWrap]');
   var goods_id = matchQueryString('goods_id');
-  console.log(goods_id);
   myajax.get('http://h6.duchengjiu.top/shop/api_goods.php', {
     goods_id,
   }, function(error, responseText) {

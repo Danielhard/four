@@ -215,6 +215,9 @@
   background-image: linear-gradient(to top, #000,#333);
   border-bottom: 2px solid #d0cfcf;
 }
+.main-nav > .w {
+  position: relative;
+}
 .main-nav dl{
   width: 130px;
   height: 38px;
