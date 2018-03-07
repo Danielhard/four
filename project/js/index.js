@@ -2,14 +2,13 @@
   var oNav = document.querySelector('#main-nav');
   var oDt = document.querySelector("#proClassify").querySelector('dt');
   var mainContent = document.querySelector('#mainContent');
+  var oLi = document.querySelector('#proList').querySelectorAll('li');
   oNav.addEventListener('click',function(event){
-    var oLi;
     event = event || window.event;
     var target = event.target || event.srcElement;
 
     if(target.nodeName === 'A'){
-      var ul = target.parentNode.parentNode;
-      oLi = ul.querySelectorAll('li');
+      // 将当前的索引值存下,这是为了便于以后获取到
       localStorage.currentNav = parseInt(target.parentNode.dataset.index);
     }
   },false);

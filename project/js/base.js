@@ -42,7 +42,7 @@ function changeClass(objArr,index,cName) {
     for(var i = 0; i < objArr.length; i++){
         objArr[i].classList.remove(cName);
     }
-    objArr[index].classList.add(cName);
+    objArr[parseInt(index)].classList.add(cName);
 }
 
 

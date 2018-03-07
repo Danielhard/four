@@ -22,7 +22,9 @@
 
         }
         var navLi = document.querySelector('#proList').querySelectorAll('li');
-        changeClass(navLi, localStorage.currentNav, 'current');
+        if (localStorage.currentNav !== undefined) {
+          changeClass(navLi, localStorage.currentNav, 'current');
+        }
       });
 
   var cat_id = matchQueryString('cat_id');
@@ -95,7 +97,6 @@
   }
   if(localStorage.value){
     var str = localStorage.value.split('&');
-    console.log(str);
     oGoodsSearch.value = str[str.length-1];
   }
   oGoodsSearch.onkeydown= function(){

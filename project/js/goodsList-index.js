@@ -22,7 +22,6 @@
   	}
 		if(localStorage.value){
     		var str = localStorage.value.split('&');
-      	console.log(str);
       	oGoodsSearch0.value = str[str.length-1];
   }
     var oGoodsSearch2 = document.querySelector('input[name=searchBtn1]');
