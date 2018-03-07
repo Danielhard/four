@@ -104,9 +104,9 @@
       oSearchDiv.style.display = 'block';
     }
   }
-  oSearchDiv.onmouseleave = function(){
-    	oSearchDiv.style.display = 'none';
-    }
+  // oSearchDiv.onmouseleave = function(){
+  //   	oSearchDiv.style.display = 'none';
+  //   }
     window.onclick = function(){
     	oSearchDiv.style.display = 'none';
     }

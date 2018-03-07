@@ -52,7 +52,7 @@
     	}
     }
     oSearchDiv.onmouseleave = function(){
-    	oSearchDiv.style.display = 'none';
+    	// oSearchDiv.style.display = 'none';
     }
     window.onclick = function(){
     	oSearchDiv.style.display = 'none';

@@ -116,30 +116,32 @@
   z-index: 9;
 }
 .search-history{
-	width: 300px;
+	width: 307px;
   height: 300px;
   z-index: 10;
   color: grey;
   position: absolute;
   background: #fff;
   overflow: hidden;
-  padding-left: 3px;
   display: none;
 }
 .search-history ul li{
-	z-index: 100;
-	width: 297px;
+  z-index: 100;
+  box-sizing: border-box;
 	height: 30px;
 	margin-bottom: 3px;
-	line-height: 30px;
+  line-height: 30px;
+  color: #ccc;
+  padding-left: 3px;
 }
 .search-history ul li a{
 	width: 297px;
 	height: 30px;
-	display: block;
+  display: block;
+  color: #666;
 }
 .search-history ul li:hover{
-	background: #EDCC61;
+  background: rgba(237, 204, 97, .5);
 }
 .searchInput{
   width: 300px;
