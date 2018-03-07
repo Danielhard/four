@@ -7,30 +7,30 @@
     var json = JSON.parse(responseText);
     var obj = json.data[0];
     oDiv.innerHTML = `<div class="productDetailLeft" name="bigo">
-		      <div class="productDetailImgB"> 
-		        <div class="zoom"></div>
-		      	<img src="${obj.goods_thumb}" alt="">
-		      	<div class="mark"></div>
-		     </div>
-		      <div class="productDetailImgS">
-		        <img src="${obj.goods_thumb}" alt="">
-		      </div>
-		         <div class="bigPic"></div>
-		    </div>
-		    <div class="productDetailRight">
-		      <h3>${obj.goods_name}</h3>
-		      <p class="des">${obj.goods_desc}</p>
-		      <p id="price" class="price">&yen;<i>${obj.price}</i></p>
-		      <div id="count" class="count fl">
-          <strong>
-            <i class="countLeft isCount">-</i><input class="countCon" value="1"><i class="countRight isCount">+</i>
-          </strong>
-        </div>
-		      <div class="buy">
-		        <span class="buyNow" id="buyNow" data-name="buyNow">立即购买</span>
-		        <span class="addCar" id="addCar" data-name="addCar">加入购物袋</span>
-		      </div>
-		    </div>`;
+                        <div class="productDetailImgB"> 
+                          <div class="zoom" style="background-image:url(${obj.goods_thumb})"></div>
+                          <img src="${obj.goods_thumb}" alt="">
+                          <div class="mark"></div>
+                        </div>
+                        <div class="productDetailImgS">
+                          <img src="${obj.goods_thumb}" alt="">
+                        </div>
+		                  <div class="bigPic"></div>
+		                </div>
+                    <div class="productDetailRight">
+                      <h3>${obj.goods_name}</h3>
+                      <p class="des">${obj.goods_desc}</p>
+                      <p id="price" class="price">&yen;<i>${obj.price}</i></p>
+                      <div id="count" class="count fl">
+                      <strong>
+                        <i class="countLeft isCount">-</i><input class="countCon" value="1"><i class="countRight isCount">+</i>
+                      </strong>
+                    </div>
+                      <div class="buy">
+                        <span class="buyNow" id="buyNow" data-name="buyNow">立即购买</span>
+                        <span class="addCar" id="addCar" data-name="addCar">加入购物袋</span>
+                      </div>
+                    </div>`;
     window.oCount();
     var oBigPic = document.querySelector('.bigPic');
     oBigPic.style.backgroundImage = 'url(' + obj.goods_thumb + ')';
@@ -83,8 +83,6 @@
         }
       }
     };
-
-    // 点击立即购买
 
     Zoom();
   });

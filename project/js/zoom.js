@@ -8,30 +8,39 @@ function Zoom() {
     var smallPicWidth = parseFloat(fetchComputedStyle(oSmallPic, 'width'));
     var zoomWidth = parseFloat(fetchComputedStyle(oZoom, 'width'));
     var rate = (960 - bigPicWidth) / (smallPicWidth - zoomWidth);
+    var flag = false;
 
-    oSmallPic.onmouseenter = function (event) {
+    oSmallPic.onmouseover = function (event) {
+        if (flag) {   //如果上一次动画还未结束, 那么什么也不做
+            return ;
+        }
+        flag = true;
         var event=event||window.event;
         var currentTarget=event.currentTarget;
-        if(currentTarget.className==="productDetailImgB"){
+        // if(currentTarget.className==="productDetailImgB"){
             oZoom.style.display = 'block';
             oBigPic.style.display = 'block';
-            oBigPic.style.zIndex=5;
-            oMark.style.backgroundColor="rgba("+255+","+255+","+255+","+0.7+")";
+            oBigPic.style.zIndex=2;
+            oMark.style.backgroundColor="rgb("+255+","+255+","+255+")";
+            oMark.style.opacity = 0;
             animate(oBigPic,{"width":480,"height":480,"top":0,"left":500},500,"Cubic.easeOut",function () {
+                oZoom.style.zIndex = 4
           })
-        }
+          animate(oMark, {"opacity": 0.7},1500,'Cubic.easeOut',function () {})
+        // }
     }
-    oSmallPic.onmouseout = function (event) {
+    oSmallPic.onmouseleave = function (event) {
         var event=event||window.event;
-        var currentTarget=event.currentTarget;
-        if(currentTarget.className==="productDetailImgB"){
-         oZoom.style.display = 'none';
-         animate(oBigPic,{"width":50,"height":50,"top":240,"left":240},500,"Cubic.easeIn",function () {
-             oMark.style.backgroundColor="rgba("+255+","+255+","+255+","+0+")";
-             oBigPic.style.display = 'none';
-             oBigPic.style.zIndex=1;
-            })
+        if (event.target.classList.contains('zoom')) {
+            return 
         }
+         oZoom.style.display = 'none';
+         oMark.style.backgroundColor = '';
+         animate(oBigPic,{"width":50,"height":50,"top":240,"left":240},500,"Cubic.easeIn",function () {
+            flag = false;
+            oBigPic.style.display = 'none';
+            oBigPic.style.zIndex=1;
+            })
     }
     oSmallPic.onmousemove = function (event) {
         event = event || window.event;
@@ -47,8 +56,9 @@ function Zoom() {
         if (y > oSmallPic.clientHeight - oZoom.clientHeight) {
             y = oSmallPic.clientHeight - oZoom.clientHeight;
         }
-        oZoom.style.top = y + 'px';
+        oZoom.style.top = y + 'px';                // 改变zoom框中背景图的位置
         oZoom.style.left = x + 'px';
+        oZoom.style.backgroundPosition = -x + 'px '+ -y + 'px';
         oBigPic.style.backgroundPosition = -x * rate + 'px ' + -y * rate + 'px';
     }
     function fetchComputedStyle(obj, property) {
