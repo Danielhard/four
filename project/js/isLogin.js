@@ -2,16 +2,18 @@
   var myFiveList = document.querySelector('.myFiveList');
   var allMyFiveList = myFiveList.querySelectorAll('a');
   var buyCar = document.querySelector('.buyCar');
-  buyCar.addEventListener('click',function(event) {
-    event = event || window.event;
-    if(!localStorage.token){
-      event.preventDefault();
-      location.href='login.html';
-    } else {
-      location.href='buyCar.html';
-    }
-
-  },false);
+  if (buyCar) {
+    buyCar.addEventListener('click',function(event) {
+      event = event || window.event;
+      if(!localStorage.token){
+        event.preventDefault();
+        location.href='login.html';
+      } else {
+        location.href='buyCar.html';
+      }
+  
+    },false);
+  }
 
   for(var i = 0; i < allMyFiveList.length; i++){
       allMyFiveList[i].addEventListener('click',function(event){
