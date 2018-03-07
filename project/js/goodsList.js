@@ -1,6 +1,5 @@
 (function() {
   var oProList = document.querySelector('#proList');
-  console.log(oProList)
   var oMainProList = document.querySelector('.mainProList');
   var allNavLi = oProList.querySelectorAll('#proList>li');
 
