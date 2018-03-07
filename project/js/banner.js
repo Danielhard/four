@@ -61,23 +61,23 @@
 // 控制轮播图移动
   function bannerMove(direction,n){
     if(direction === 'left'){
-      animate(allLi[iNow],{left: -dis},300,'Quad.easeOut');
+      animate(allLi[iNow],{left: dis},300,'Quad.easeOut');
       if(n){
         iNow = parseInt(n);
       }else{
-        iNow ++;
-        iNow = iNow >= allLi.length  ? 0 : iNow;
+        iNow --;
+        iNow = iNow < 0  ? allLi.length - 1 : iNow;
       }
-      allLi[iNow].style.left = dis + "px";
+      allLi[iNow].style.left = -dis + "px";
     } else if(direction === 'right'){
-      animate(allLi[iNow],{left: dis},300,'Quad.easeOut');
+      animate(allLi[iNow],{left: -dis},300,'Quad.easeOut');
       if(n || n === 0){
         iNow = parseInt(n);
       }else{
         iNow ++;
-        iNow = iNow >= allLi.length  ? 0 : iNow;
+        iNow = iNow > allLi.length - 1  ? 0 : iNow;
       }
-      allLi[iNow].style.left = -dis + "px";
+      allLi[iNow].style.left = dis + "px";
     }
     changeClass(allCircleList,iNow,'current');
     animate(allLi[iNow],{left: 0},300,'Quad.easeOut')
