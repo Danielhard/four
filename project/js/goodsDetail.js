@@ -60,7 +60,6 @@
       var oCount = document.querySelector("#count");
       var countVal = parseInt(oCount.querySelector("input").value);
       if (target.id === 'addCar') {
-        console.log('添加到购物车');
         if (!localStorage.token) {
           toast('请先登录', 2000);
           setTimeout(function() {
@@ -74,7 +73,6 @@
               {goods_id, number: countVal},
               function(err, responseText) {
                 var json = JSON.parse(responseText);
-                console.log(json);
                 if (json.code === 0) {
                   showProCount();
                   toast('添加到购物车成功', 1500);

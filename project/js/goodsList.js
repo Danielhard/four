@@ -68,7 +68,6 @@
     event.preventDefault();
     if(localStorage.value){
       var str = localStorage.value.split('&');
-      console.log(str);
     }
     if (event.keyCode === 13) {
       if (!localStorage.value) {
@@ -175,7 +174,6 @@
     }
 
     if (data.length === 0) {
-    	console.log(location.href); 
       oMainProList.innerHTML = `<p><a href="index.html">商品数据为空,点击此处返回首页</a></p>`;
     }
 

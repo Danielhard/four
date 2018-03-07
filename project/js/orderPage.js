@@ -4,7 +4,6 @@ var oTable = document.querySelector('#order-table');
 
 myajax.get('http://h6.duchengjiu.top/shop/api_order.php', {token: localStorage.token}, function(err, responseText){
   var json = JSON.parse(responseText);
-  console.log(json);
   var data = json.data;
   var goods;
   if (data.length === 0) {
@@ -55,7 +54,6 @@ myajax.get('http://h6.duchengjiu.top/shop/api_order.php', {token: localStorage.t
   
 		var oOrder = document.querySelectorAll('span[name=order]');
 		var oTablebox = document.querySelector('table');
-		console.log(oOrder);
 		for(var i = 0 ; i < oOrder.length;i ++){
 			  oOrder[i].index = i;
 				oOrder[i].onclick = function(event) {

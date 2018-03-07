@@ -78,7 +78,6 @@
                     localStorage.token,
                     {goods_id, number}, function(error, responseText) {
                       var json = JSON.parse(responseText);
-                      console.log(json);
                       if (json.code === 0) {
                         var father = branch.parentNode;
                         father.parentNode.removeChild(father);

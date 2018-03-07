@@ -31,14 +31,12 @@
 	oRegisterSubmit.onclick = function(event){
 		event = event || window.event;
 		event.preventDefault();
-		console.log(1);
 		myajax.post('http://h6.duchengjiu.top/shop/api_user.php',{
 	      status : 'register',
 				username : oUsername.value,
 				password : oPassword.value
 			},function(error,responseText){
 				var json = JSON.parse(responseText);
-				console.log(json);
 				oCheck.innerText = json.message;
 				if (json.code === 0) {
 					hidden(oErrorMessage);

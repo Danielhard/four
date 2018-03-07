@@ -9,7 +9,6 @@
     	event.preventDefault();
     	if(localStorage.value){
     		var str = localStorage.value.split('&');
-      	console.log(str);
     	}
     	if (event.keyCode === 13) {
 				if (!localStorage.value) {

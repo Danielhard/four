@@ -13,7 +13,6 @@
     event.preventDefault();
     if(localStorage.value){
       var str = localStorage.value.split('&');
-      console.log(str);
     }
     if (event.keyCode === 13) {
       if (!localStorage.value) {
@@ -44,7 +43,7 @@
 		if(localStorage.value){
       	var str=location.href.split('=');
       	oGoodsSearch.value =decodeURI(str[str.length-1]) ;
-      	console.log(str);
+
     }
     oGoodsSearch.onkeydown= function(){
     	if (localStorage.value) {

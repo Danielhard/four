@@ -151,7 +151,6 @@
     event.preventDefault();
     var addAddressConForm = document.querySelector('#addAddressConForm');
     var queryString = serializeForm(addAddressConForm);
-    console.log(queryString);
     myajax.post('http://h6.duchengjiu.top/shop/api_useraddress.php?status=add&token='+ localStorage.token,
         queryString,function(error,jsonData){
           var json = JSON.parse(jsonData);
@@ -176,7 +175,6 @@
           },
           function(error,jsonData){
            var json = JSON.parse(jsonData);
-           console.log(json);
            if(json.code === 0){
              toast("订单提交成功,请前往我的订单查看！",1500);
            }else{
