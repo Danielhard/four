@@ -33,10 +33,10 @@
           iNow = arrIndex.indexOf(iNowVal);
           changeClass(allPageListLi, iNow, 'current');
         } else {
-          if (iNowVal === 0) {
+          if (iNowVal === 0) {            // 已经是第一页了，不能再有上一页了
             iNowVal = 1;
           }
-          changeIndex();
+          changeIndex();                 // 不是第一页调用changeIndex()方法
         }
 
         myajax.get('http://h6.duchengjiu.top/shop/api_goods.php',
@@ -65,11 +65,13 @@
       }
 
       function bindDom(jsonData) {
+        console.log(1)
         // 和上面的获取数据后的操作是一样的，这里可以封装成一个方法
         var allLi = oMainProList.querySelectorAll('li');       // 获取所有的li
         var json = JSON.parse(jsonData);
 
         var data = json.data;
+        console.log(data);
         for (var i = 0; i < data.length; i++) {
           var obj = data[i];
 
@@ -90,7 +92,7 @@
         animate(document, {scrollTop: 0}, 600, 'Quad.easeOut');
       }
 
-      function changeIndex() {
+      function changeIndex() {         // changeIndex其实就是用于改变arrIndex中的值的 
         // 更改arrIndex中的值
         iNow = 0;
         for (var i = 0; i < arrIndex.length; i++) {

@@ -2,7 +2,7 @@
   //唯一向外暴露一个顶层变量
   var myajax = window.myajax = {};
   //作者、版本号信息
-  myajax.author = "maxwelldu";
+  myajax.author = "Y-J-H";
   myajax.version = "1.0.0";
 
   //这个对象有两个方法，一个get,一个post

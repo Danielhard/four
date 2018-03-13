@@ -67,7 +67,7 @@ function animate(elem, jsonEnd, time, moveWay, callback) {
 
   //信号量：主要用于表示下一步要移动到什么位置,刚开始我们要初始化信号量  semaphore信号量的意思
   var semaphoreJson = {};
-  var variationJson = {};      //定义一个变化量json
+  var variationJson = {};      //定义一个变化量json(这里使用json的原因就是变化的属性可能有多个)
   var startJson = {};           //定义一个初始值json
 
   for (var k in jsonEnd) {
@@ -95,7 +95,7 @@ function animate(elem, jsonEnd, time, moveWay, callback) {
     frame++;
     for (var k in jsonEnd) {
 
-      semaphoreJson[k] = positionMethod(frame,startJson[k],variationJson[k],frames);
+      semaphoreJson[k] = positionMethod(frame,startJson[k],variationJson[k],frames);    // 获取到当前的状态
 
       if (k === 'opacity') {
         elem.style[k] = semaphoreJson[k];
